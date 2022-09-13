@@ -57,6 +57,7 @@ module.exports = function (config) {
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('page', 'page.njk')
     config.addLayoutAlias('post', 'post.njk')
+    config.addLayoutAlias('project', 'project.njk')
     config.addLayoutAlias('draft', 'draft.njk')
     config.addLayoutAlias('note', 'note.njk')
 
