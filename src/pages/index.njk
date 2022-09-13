@@ -28,6 +28,13 @@ permalink: /
     </div>
 </div>
 
+{% if collections.projects.length %}
+<div class="u-mb4">
+    <h2>Research and Software Projects</h2>
+    {% include "featuredprojects.njk" %}
+</div>
+{% endif %}
+
 {% if collections.featured.length %}
 <div class="u-mb4">
     <h2>Featured Posts</h2>
