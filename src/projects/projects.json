@@ -1,4 +1,4 @@
 {
-    "layout": "projects",
-    "permalink": "projects/{{ page.fileSlug }}/index.html"
+    "layout": "project",
+    "permalink": "project/{{ page.fileSlug }}/index.html"
 }
