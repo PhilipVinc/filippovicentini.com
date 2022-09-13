@@ -6,7 +6,7 @@
     padding: 2rem 0 4rem;
 
     @include mq(lg) {
-        min-height: 500px;
+        min-height: 300px;
     }
 
     &__inner {
@@ -20,7 +20,7 @@
         margin-bottom: 0.33em;
 
         @include mq(md) {
-            font-size: 5.875rem; //94px
+            font-size: 3.875rem; //94px
         }
     }
     &__pretitle {
@@ -33,12 +33,13 @@
     }
 
     &__content {
-        font-size: 1.5rem;
+        font-size: 1.15rem;
         font-weight: 300;
         line-height: 1.4;
+        text-align: justify;
 
         @include mq(md) {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
     }
 
