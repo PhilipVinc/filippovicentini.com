@@ -3,3 +3,6 @@ dist
 cache
 functions
 .env
+
+.DS_STORE
+.envrc
