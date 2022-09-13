@@ -1,7 +1,7 @@
 {
   "name": "mxb.dev",
   "version": "4.2.0",
-  "description": "Personal Website of Max Böck",
+  "description": "Personal Website of Filippo Vicentini",
   "license": "CC BY-SA",
   "browserslist": [
     "defaults"
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "http://github.com/maxboeck/mxb"
   },
-  "author": "Max Böck",
+  "author": "Filippo Vicentini",
   "dependencies": {
     "@11ty/eleventy": "^0.11.1",
     "@11ty/eleventy-navigation": "^0.1.6",

@@ -1,15 +1,15 @@
 {
-    "name": "Max Böck",
-    "email": "hello@mxb.dev",
-    "avatar": "/assets/images/avatar2.jpg",
+    "name": "Filippo Vicentini",
+    "email": "filippovicentini@gmail.com",
+    "avatar": "/assets/images/avatar3.jpg",
     "social": {
         "twitter": {
-            "name": "mxbck",
-            "url": "https://twitter.com/mxbck"
+            "name": "philipvinc",
+            "url": "https://twitter.com/philipvinc"
         },
         "github": {
-            "name": "maxboeck",
-            "url": "https://github.com/maxboeck"
+            "name": "philipvinc",
+            "url": "https://github.com/philipvinc"
         },
         "codepen": {
             "name": "mxbck",
