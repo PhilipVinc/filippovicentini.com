@@ -98,6 +98,14 @@ module.exports = function (config) {
             .sort((a, b) => b.date - a.date)
     })
 
+    // Collections: Featured Projects
+    config.addCollection('projects', function (collection) {
+        return collection
+            .getFilteredByGlob(CONTENT_GLOBS.posts)
+            .filter((item) => item.data.featured)
+            .sort((a, b) => b.date - a.date)
+    })
+
     // Base Config
     return {
         dir: {
