@@ -1,13 +1,8 @@
 <footer class="footer h-card" role="contentinfo">
     <div class="footer__inner container">
         <p class="footer__item">
-            <strong>&copy; 2012&ndash;{{ build.timestamp | dateToFormat('yyyy') }}</strong><br />
+            <strong>&copy; 2022&ndash;{{ build.timestamp | dateToFormat('yyyy') }}</strong><br />
             <a class="p-name u-url" rel="me" href="{{ site.url }}">{{ author.name }}</a>
-        </p>
-
-        <p class="footer__item">
-            <strong>Subscribe</strong><br />
-            <a href="/mailinglist">Mailing List</a>
         </p>
 
         <p class="footer__item">
@@ -17,25 +12,24 @@
         </p>
 
         <p class="footer__item">
-            <strong>Legal</strong><br />
-            <a href="/privacy/">Privacy Policy</a>
-        </p>
-
-        <p class="footer__item">
             <strong>Links</strong><br />
             <a href="/blogroll/">Blogroll</a>
         </p>
 
-        <p class="footer__item footer__item--right u-desktop-only">
-            <a href="https://speedlify.mxb.dev/mxb.dev/" class="footer__speedlify">
-                <speedlify-score speedlify-url="https://speedlify.mxb.dev" hash="7dda0135" score weight></speedlify-score>
-            </a>
+        <p class="footer__item">
+            <strong>Theme</strong><br />
+            <a href="/theme/">About this theme</a>
         </p>
 
         <p class="footer__item footer__item--right">
-            <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" class="footer__icon" title="Edit this page on Github">
+            {# <a href="{{ site.repo }}/tree/master/{{ page.inputPath }}" class="footer__icon" title="Edit this page on Github">
                 <span class="sr-only">Edit this page on Github</span>
                 {% icon "github" %}
+            </a> #}
+
+            <a href="{{ "https://scholar.google.com/citations?user=AXZHEE8AAAAJ" | url }}" class="footer__icon" title="RSS Feed">
+                <span class="sr-only">RSS Feed</span>
+                {% icon "scholar" %}
             </a>
             <a href="{{ "/feed.xml" | url }}" class="footer__icon" title="RSS Feed">
                 <span class="sr-only">RSS Feed</span>

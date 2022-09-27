@@ -1,9 +1,9 @@
 {
-    "title": "Max Böck",
-    "description": "Max Böck is a professional front-end developer based in Vienna, Austria.",
+    "title": "Filippo Vicentini",
+    "description": "Filippo Vicentini is a Computational Quantum Physicist working on Machine-Learning inspired methods for quantum physics.",
     "lang": "en",
     "locale": "en_US",
-    "domain": "mxb.dev",
-    "url": "https://mxb.dev",
-    "repo": "https://github.com/maxboeck/mxb"
+    "domain": "filippovicentini.com",
+    "url": "https://filippovicentini.com",
+    "repo": "https://github.com/PhilipVinc/filippovicentini.com"
 }

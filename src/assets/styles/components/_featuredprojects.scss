@@ -41,7 +41,7 @@
     }
 }
 
-.featuredpost {
+.featuredproject {
     display: block;
     height: 300px;
     position: relative;
@@ -97,7 +97,7 @@
 }
 
 @media (pointer: fine) {
-    .featuredpost {
+    .featuredproject {
         &__inner {
             background-image: var(--gradient-bottom);
         }

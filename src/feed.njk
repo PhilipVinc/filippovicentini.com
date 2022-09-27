@@ -11,10 +11,11 @@ eleventyExcludeFromCollections: true
     <author>
         <name>{{ author.name }}</name>
     </author>
-    {% if collections.posts %}
+    {% if collections.posts | length%}
     <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
     {% endif %}
     <id>{{ site.url }}/</id>
+    {% if collections.posts | length %}
     {%- for post in collections.posts | reverse -%}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(site.url) }}{% endset %}
         <entry>
@@ -27,4 +28,5 @@ eleventyExcludeFromCollections: true
             ]]></content>
         </entry>
     {%- endfor -%}
+    {% endif %}
 </feed>

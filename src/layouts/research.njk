@@ -1,0 +1,16 @@
+---
+layout: base
+---
+<article class="secondarypage">
+    <header class="secondarypage__header">
+        <h1 class="secondarypage__title">{{ title }}</h1>
+        {% if subtitle %}
+            <p class="secondarypage__subtitle">{{ subtitle | safe }}</p>
+        {% endif %}
+    </header>
+
+    <div class="secondarypage__content e-content markdown" itemprop="articleBody">
+        {{ content | safe }}
+    </div>
+
+</article>

@@ -6,7 +6,7 @@
         <li class="featuredprojects__item">
             <div class="featuredproject" style="{% if project.data.featuredImageColor %}background-color: {{ project.data.featuredImageColor }};{% endif %}">
                 {% if project.data.featuredImage %}
-                    {% set imgsrc %}/assets/images/featured/{{ project.data.featuredImage }}{% endset %}
+                    {% set imgsrc %}/assets/images/featuredprojects/{{ project.data.featuredImage }}{% endset %}
                     <picture>
                         <source srcset="{{ imgsrc | setExt('avif') }}" type="image/avif">
                         <source srcset="{{ imgsrc | setExt('webp') }}" type="image/webp">
@@ -16,7 +16,7 @@
                 {% endif %}
                 <div class="featuredproject__inner">
                     <a href="{{ project.url | url }}" class="featuredproject__link">
-                        <span class="featuredproject__title">{{ project.data.title }}</span>
+                        <span class="featuredproject__title">{% if project.data.featuredTitle %}{{ project.data.featuredTitle }}{% else %}{{ project.data.title }}{% endif %}</span>
                     </a>
                     <p class="featuredproject__description">
                         {% if project.data.description %}
@@ -25,15 +25,16 @@
                             {{ project.templateContent | excerpt | striptags }}
                         {% endif %}
                     </p>
-                    <span class="featuredproject__likecount" aria-label="{{ likeCount }} Likes">
+                    {#<span class="featuredproject__likecount" aria-label="{{ likeCount }} Likes">
                         {% icon "heart" %} {{ likeCount|humanizeNumber }}
                     </span>
+                    #}
                 </div>
             </div>
         </li>
         {% endfor %}
     </ul>
     <p class="featuredprojects__footer">
-        <a href="/projects" class="featuredprojects__see-all">See All Projects {% icon "arrow-right" %}</a>
+        <a href="/research" class="featuredprojects__see-all">See more about my Research {% icon "arrow-right" %}</a>
     </p>
 </div>

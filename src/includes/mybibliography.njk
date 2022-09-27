@@ -1,0 +1,48 @@
+<div class="mypapers">
+    <ul class="mypapers__list">
+        {% for paper in collections.mypapers  %}
+        <li class="mypapers__item">
+            <div class="paper">
+                {% if paper.data.featuredImage %}
+                    {% set imgsrc %}/assets/images/featuredprojects/{{ paper.data.featuredImage }}{% endset %}
+                    <picture>
+                        <source srcset="{{ imgsrc | setExt('avif') }}" type="image/avif">
+                        <source srcset="{{ imgsrc | setExt('webp') }}" type="image/webp">
+                        <source srcset="{{ imgsrc }}" type="image/jpeg">
+                        <img src="{{ imgsrc }}" alt="" width="500" height="500" class="paper__image" />
+                    </picture>
+                {% endif %}
+                <div class="paper__inner">
+                    <a href="{{ paper.url | url }}" class="paper__link">
+                        <span class="paper__title">{{ paper.data.title }}</span>
+                    </a>
+                    <p class="paper__authors">
+                        {{ paper.data.authors[0] }}
+                        {% for author in paper.data.authors | slice(1, -1)%}, {{ author }}
+                        {% endfor %}
+                    </p>
+                    {% if paper.data.preprint %}
+                        Preprint: {{ paper.data.preprint }}
+                    {% else %}
+                        {{ paper.data.journal }} {% if paper.data.volume %}<b>{{ paper.data.volume }}</b>{%endif %} {% if paper.data.issue %}{{ paper.data.issue }}{% endif %} ({{paper.data.year }}) 
+                    {% endif %}
+
+                    <hr/>
+
+                    <p class="paper__description">
+                        {{ paper.templateContent | safe }}
+                    </p>
+                    {% if paper.data.tags %}
+                    <div class="paper__tags">
+                        {% for tag in paper.data.tags %}
+                            <span class="paper__tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

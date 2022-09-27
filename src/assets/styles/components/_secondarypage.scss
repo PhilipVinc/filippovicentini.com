@@ -1,0 +1,90 @@
+.secondarypage {
+    &__header {
+        padding: 2rem 0;
+    }
+    &__subtitle {
+        @extend .lead;
+    }
+    &__content {
+        @include container-narrow;
+        padding-bottom: 2rem;
+        max-width: 60rem;
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        &--fullwidth {
+            max-width: none;
+        }
+    }
+
+    &__photo {
+        position: relative;
+        display: flex;
+        padding-bottom: 75%;
+        margin-bottom: 2rem;
+        max-height: 26rem;
+
+        .responsive-image {
+            max-height: 26rem;
+            background-position: left center;
+            object-fit: contain;
+        }
+    }
+    &__phototext {
+        max-width: 54rem;
+        text-align: justify;
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    }
+
+    @include mq(md) {
+        &__photoblock {
+            display: flex;
+            align-items: center;
+            margin: 0 calc(50% - 50vw) 3rem;
+        }
+        &__photo {
+            width: 40%;
+            height: 40rem;
+            padding-bottom: 450px;
+            margin: 0;
+        }
+        &__phototext {
+            flex: 1 1 60%;
+            padding: 2rem 3rem;
+        }
+
+        &__header {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        &__title {
+            font-size: 5rem;
+            letter-spacing: -2px;
+        }
+        &__content {
+            padding-bottom: 4rem;
+        }
+    }
+
+    @include mq(lg) {
+        &__header {
+            padding: 5rem 0;
+        }
+        &__title {
+            font-size: 7rem;
+        }
+    }
+    @include mq(sm) {
+        &__photo {
+            height: 30rem;
+        }
+    }
+
+}

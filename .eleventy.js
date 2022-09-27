@@ -5,6 +5,9 @@ const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const pluginPageAssets = require('eleventy-plugin-page-assets')
 const pluginShareHighlight = require('eleventy-plugin-share-highlight')
+const Cite = require('citation-js');
+const katex = require("katex");
+const mathjaxPlugin = require("eleventy-plugin-mathjax");
 
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -14,8 +17,10 @@ const markdown = require('./utils/markdown.js')
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
+    projects: 'src/projects/**/*.md',
     drafts: 'src/drafts/**/*.md',
     notes: 'src/notes/*.md',
+    mypapers: 'src/mypapers/*.md',
     media: '*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm'
 }
 
@@ -31,11 +36,21 @@ module.exports = function (config) {
         silent: true
     })
     config.addPlugin(pluginShareHighlight)
+    config.addPlugin(mathjaxPlugin);
 
     // Filters
     Object.keys(filters).forEach((filterName) => {
         config.addFilter(filterName, filters[filterName])
     })
+
+    // Latex
+    config.addFilter("latex", (content) => {
+      return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
+        const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+
+        return katex.renderToString(cleanEquation, { throwOnError: false });
+      });
+    });
 
     // Transforms
     Object.keys(transforms).forEach((transformName) => {
@@ -46,6 +61,14 @@ module.exports = function (config) {
     config.addShortcode('icon', shortcodes.icon)
     config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
+    config.addPairedShortcode("markdown", (content, inline = null) => {
+      return inline
+        ? markdown.renderInline(content)
+        : markdown.render(content);
+    });
+    config.addPairedShortcode("bibtex", 
+        require('eleventy-plugin-bibtex'));
+
 
     // Asset Watch Targets
     config.addWatchTarget('./src/assets')
@@ -90,6 +113,11 @@ module.exports = function (config) {
         return collection.getFilteredByGlob(CONTENT_GLOBS.notes).reverse()
     })
 
+    // Collections: Notes
+    config.addCollection('mypapers', function (collection) {
+        return collection.getFilteredByGlob(CONTENT_GLOBS.mypapers).reverse()
+    })
+
     // Collections: Featured Posts
     config.addCollection('featured', function (collection) {
         return collection
@@ -98,12 +126,12 @@ module.exports = function (config) {
             .sort((a, b) => b.date - a.date)
     })
 
-    // Collections: Featured Projects
+    // Collections: Projects
     config.addCollection('projects', function (collection) {
         return collection
-            .getFilteredByGlob(CONTENT_GLOBS.posts)
+            .getFilteredByGlob(CONTENT_GLOBS.projects)
             .filter((item) => item.data.featured)
-            .sort((a, b) => b.date - a.date)
+            .sort((a, b) => b.order - a.order)
     })
 
     // Base Config

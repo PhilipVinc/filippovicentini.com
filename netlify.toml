@@ -25,28 +25,9 @@
 
 # Netlify subdomain
 [[redirects]]
-    from = "https://mxb.netlify.com/*"
-    to = "https://mxb.dev/:splat"
+    from = "https://filippovicentini.netlify.com/*"
+    to = "https://filippovicentini.com/:splat"
     status = 301
-    force = true
-
-# AT domain
-[[redirects]]
-    from = "https://mxb.at/*"
-    to = "https://mxb.dev/:splat"
-    status = 301
-    force = true
-
-[[redirects]]
-    from = "https://www.mxb.at/*"
-    to = "https://mxb.dev/:splat"
-    status = 301
-    force = true
-
-[[redirects]]
-    from = "https://mxb.dev/blog/make-free-stuff-web3"
-    to = "https://mxb.dev/blog/make-free-stuff"
-    status = 302
     force = true
 
 # Bots

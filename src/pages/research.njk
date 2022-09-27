@@ -1,0 +1,76 @@
+---
+layout: research
+permalink: research/index.html
+title: Research
+eleventyNavigation:
+  key: Research
+  order: 2
+---
+
+{% markdown %}
+
+The objective of my research is to pursue the development of novel numerical algorithms **bridging the gap** between Machine Learning **(ML)** and **Quantum Physics**, and then to apply them to the study of **Strongly Correlated Matter**, both at equilibrium and **out of equilibrium**. 
+
+## Neural-Network Quantum States
+
+Quantum Mechanical Systems involve an exponentially-increasing number of coupled degrees of freedom which quickly becomes intractable to classical computational methods. Over the years, many computational techniques have been developed to avoid such cost, ranging from Tensor Network methods to Quantum Monte Carlo.
+
+{% endmarkdown %}
+
+<div class="secondarypage__photoblock">
+    <div class="secondarypage__photo">
+        <img
+            class="responsive-image js-responsive-image"
+            src="{{ '/assets/images/featuredprojects/nqs_sketch.png' | url }}"
+            srcset="{{ '/assets/images/featuredprojects/nqs_sketch.png' | url }} 600w, 
+            {{ '/assets/images/featuredprojects/nqs_sketch.png' | url }} 1200w"
+            sizes="(min-width: 640px) 40vw, 100vw"
+            alt="Max Böck"
+        />
+    </div>
+    <div class="secondarypage__phototext markdown">
+        {% markdown %}
+
+        A [particularly succesfull idea](https://www.science.org/doi/abs/10.1126/science.aag2302) has been that of interpreting the state of a quantum system as an unknown functional that can be approximated by a Neural-Network.
+
+        The parameters of the neural-network must be optimised using some iterative algorithm such as stochastic-gradient-descent or ADAM. However, as the underlying physical principles are known, it has been possible to devise algorithms that avoid many of the complications of standard artificial intelligence tasks and give extremely accurate results.
+
+        I call this approach **Knowedledge-driven Machine Learning**, as opposed to the **Data-Driven** approach that is commonly discussed.
+
+        {% endmarkdown %}
+    </div>
+</div>
+
+{% markdown %}
+
+In 
+
+{% endmarkdown %}
+
+<div class="u-mb4">
+    <h2>Research and Software Projects</h2>
+    {% include "featuredprojects.njk" %}
+</div>
+
+
+
+{% markdown %}
+
+## Official Complaint
+
+It is within your rights to file an official complaint with the responsible data protection authority, should you believe this website is in violation of your privacy. I would still prefer that you reach out to me personally first - otherwise please contact:
+
+__Österreichische Datenschutzbehörde__  
+Hohenstaufengasse 3  
+1010 Vienna, AT  
+[dsb@dsb.gv.at](mailto:dsb@dsb.gv.at)
+
+<p class="u-align-right"><em>Version: 2019-01-23</em></p>
+
+{% endmarkdown %}
+
+
+<div class="u-mb4">
+    <h2>Research and Software Projects</h2>
+    {% include "mybibliography.njk" %}
+</div>

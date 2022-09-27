@@ -4,7 +4,7 @@ import { DateTime } from 'luxon'
 
 // The place where new shared notes should go
 const API_FILE_TARGET =
-    'https://api.github.com/repos/maxboeck/mxb/contents/src/notes/'
+    'https://api.github.com/repos/philipvinc/filippovicentini.com/contents/src/notes/'
 
 // Helper function to clean strings for frontmatter
 const sanitize = (str) => {
@@ -97,8 +97,8 @@ const postFile = async (params) => {
         message: 'new shared note',
         content: Buffer.from(fileContent).toString('base64'),
         committer: {
-            name: 'Max Böck',
-            email: 'hello@mxb.dev'
+            name: 'Filippo Vicentini',
+            email: 'filippovicentini@gmail.com'
         }
     }
 

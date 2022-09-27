@@ -1,0 +1,28 @@
+---
+layout: base
+---
+<div class="page page--about">
+    <header class="page__header">
+        <h1 class="page__title">{{ title }}</h1>
+    </header>
+    <div class="page__content page__content--fullwidth">
+
+        <div class="about">
+            <div class="about__header">
+                {% include "about_photo.njk" %}
+                <div class="about__intro lead">
+                    <p>I am Filippo Vicentini, Professor in Artificial Intelligence and Condensed Matter Physics at <a href="https://pmc.polytechnique.fr/?lang=en">Ecole Polytechnique</a> in the Paris area.
+                    I develop <a href="https://www.nature.com/articles/s42254-021-00285-7">Machine-Learning-inspired classical and quantum algorithms</a> to tackle hard computational problems arising in Quantum Physics.
+                    </p>
+                    <p>
+                    I am an active <a href="https://github.com/PhilipVinc">scientific software developer</a>.
+                    </p>
+                </div>
+            </div>
+            <div class="about__content markdown">
+                {{ content | safe }}
+            </div>
+        </div>
+
+    </div>
+</div>

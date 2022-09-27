@@ -1,10 +1,12 @@
 ---
-title: NetKet
+title: "NetKet: The Machine Learning toolbox for Quantum Physics"
 image: logo.png
 description: "Develop Software for Researchers."
 featured: true
-featuredImage: colors.jpg
-featuredImageColor: "#77309A"
+featuredTitle: NetKet
+featuredImage: netket_white.jpg
+featuredImageColor: "#252F3C"
+order: 5
 ---
 
 <p class="lead">Last year, the design gods decided that dark modes were the new hotness. "Light colors are for suckers", they laughed, drinking matcha tea on their fixie bikes or whatever.</p>

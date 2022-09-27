@@ -38,34 +38,5 @@ layout: base
                 <img class="u-photo" src="{{ author.avatar | url | absoluteUrl(site.url) }}" />
             </p>
         </div>
-
-       <a
-           href="https://twitter.com/intent/follow?screen_name={{ author.social.twitter.name }}"
-           target="_blank"
-           rel="noopener noreferrer"
-           title="Follow {{ author.name }} on Twitter"
-           class="btn btn--twitter"
-       >
-           {% icon "twitter" %} Follow @{{ author.social.twitter.name }}
-       </a>
     </div>
 </article>
-
-{% if not draft %}
-<div class="projectsection">
-    <div class="projectsection__header">
-        <h3 class="projectsection__title u-mb0">Webmentions</h3>
-        <a href="https://indieweb.org/Webmention" class="projectsection__info" target="_blank" rel="noopener noreferrer">
-            {% icon "question" %} What’s this?
-        </a>
-    </div>
-
-    {%- set webmentionUrl -%}{{ page.url | url | absoluteUrl(site.url) }}{%- endset -%}
-    {% include 'webmentions.njk' %}
-</div>
-
-<div class="projectsection">
-    <h3 class="projectsection__title">Other things I've written</h3>
-    {% include 'otherposts.njk' %}
-</div>
-{% endif %}

@@ -1,0 +1,124 @@
+.mypapers {
+    --gradient-bottom: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.15) 50%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    --gradient-full: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+
+    &__list {
+        margin: 2rem 0;
+    }
+
+    &__item {
+        padding: 0.75rem 0.5rem;
+    }
+
+    &__footer {
+        text-align: right;
+    }
+    &__see-all {
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+
+        .icon {
+            margin-left: 0.25rem;
+            transform: translateX(0);
+            transition: transform 0.2s;
+        }
+
+        @include hover-focus {
+            .icon {
+                transform: translateX(30%);
+            }
+        }
+    }
+}
+
+.paper {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--color-bg-offset);
+    box-shadow: 14px 14px 60px -10px rgba(0, 0, 0, 0.3);
+
+    &__image {
+        @include coverall;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &__inner {
+        border-radius: 0.5rem;
+        color: #fff;
+        padding: 1rem;
+        background-image: var(--gradient-full);
+    }
+
+    &__link {
+        @include stretched-link;
+        @include hyphenate;
+        display: block;
+        color: var(--text-color) !important;
+    }
+
+    &__title {
+        display: block;
+        font-family: var(--font-family-display);
+        font-weight: 500;
+        font-size: 1.75rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+    }
+    &__tags {
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        transform: translateY(-50%);
+
+        @include mq(md) {
+            position: static;
+            margin-left: auto;
+            transform: none;
+        }
+    }
+    &__tag {
+        display: inline-block;
+        font-size: 0.875rem;
+        padding: 0.25em 0.5em;
+        border-radius: 0.25rem;
+        background-color: var(--color-secondary);
+        color: #fff;
+    }}
+
+@media (pointer: fine) {
+    .paper {
+        &__inner {
+        }
+        &:hover &__inner,
+        &:focus-within &__inner {
+        }
+
+        &__description {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s $animation-curve-default,
+                transform 0.2s $animation-curve-default;
+        }
+
+        &__image {
+            object-position: center top;
+        }
+    }
+}
