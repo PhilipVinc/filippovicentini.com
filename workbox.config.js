@@ -1,5 +1,5 @@
 module.exports = {
-    cacheId: 'mxb',
+    cacheId: 'filippovicentini',
     globDirectory: './dist',
     globPatterns: ['**/*.woff2'],
     swDest: './dist/sw.js',

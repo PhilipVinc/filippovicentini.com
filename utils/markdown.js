@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
+const markdownItFootnotes = require('markdown-it-footnote')
 
 const anchorSlugify = (s) =>
     encodeURIComponent(
@@ -14,7 +15,8 @@ const anchorSlugify = (s) =>
 const markdown = markdownIt({
     html: true,
     breaks: true,
-    typographer: true
+    typographer: true,
+    code: false
 }).use(markdownItAnchor, {
     permalink: true,
     permalinkSymbol: '#',
@@ -23,6 +25,6 @@ const markdown = markdownIt({
     permalinkAttrs: () => ({ 'aria-hidden': true }),
     level: 2,
     slugify: anchorSlugify
-})
+}).use(markdownItFootnotes).disable('code')
 
 module.exports = markdown
