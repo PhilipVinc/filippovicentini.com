@@ -11,6 +11,10 @@ eleventyNavigation:
 
 The objective of my research is to pursue the development of novel numerical algorithms **bridging the gap** between Machine Learning **(ML)** and **Quantum Physics**, and then to apply them to the study of **Strongly Correlated Matter**, both at equilibrium and **out of equilibrium**. 
 
+{% callout info %}
+I am looking for motivated students to do their Master internship or PhD with me. If you are already a researcher somewhere and wish to collaborate, drop me an email!
+{% endcallout %}
+
 ## Neural-Network Quantum States
 
 Quantum Mechanical Systems involve an exponentially-increasing number of coupled degrees of freedom which quickly becomes intractable to classical computational methods. Over the years, many computational techniques have been developed to avoid such cost, ranging from Tensor Network methods to Quantum Monte Carlo.
@@ -35,7 +39,7 @@ Quantum Mechanical Systems involve an exponentially-increasing number of coupled
 
         The parameters of the neural-network must be optimised using some iterative algorithm such as stochastic-gradient-descent or ADAM. However, as the underlying physical principles are known, it has been possible to devise algorithms that avoid many of the complications of standard artificial intelligence tasks and give extremely accurate results.
 
-        I call this approach **Knowedledge-driven Machine Learning**, as opposed to the **Data-Driven** approach that is commonly discussed.
+        I call this approach **Knowedledge-driven Machine Learning**, as opposed to the **Data-Driven** approach that is commonly considered.
 
         {% endmarkdown %}
     </div>
@@ -43,7 +47,15 @@ Quantum Mechanical Systems involve an exponentially-increasing number of coupled
 
 {% markdown %}
 
-In 
+Within the domain of Computational Physics, the selling point of Neural Quantum States **(NQS)** methods is their ability to represent states in 2- and 3-Dimensional systems, which cannot be easily tackled with Tensor Networks. Moreover, **NQS** methods avoid the so-called sign problem.  [I have also shown](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.122.250503) how to use **NQS** to study "Open" Quantum Systems, where the noisy environment decoheres the quantum state and forces us to use a classical mixture to describe the state. Thanks to this, it is now possible to simulate large quantum experiments using NQS techniques.
+
+The success of Neural Networks as state approimators also owes to our understanding of physical simmetries: by devising Architectures that implicitly enforce them we are able to obtain very accurate results. While lattice symmetries such as translations and rotations are relatively simple to enforce, it is not yet clear how to constraint nonlinear ansatzes to respect a more complicated constraint, such as those arising from the $\mathbb{SU}(2)$ symmetry of spins. 
+
+Of course, [there is no free lunch](https://en.wikipedia.org/wiki/No_free_lunch_theorem), and the exceptional representational power of Neural Networks comes at a price: an highly nonlinear optimisation problem. The optimisation problems that arise with NQS are non-trivial, and there's a strong interest into developing advanced, higher-order optimisation schemes that can converge more efficiently to the desired state. For example, a very succesful _direction_ is that of the natural gradient (pun intended), which leverages ideas from differential geometry such as the curvature tensor associated to a neural network. This object, the so-called **Quantum Geometric Tensor**, has several properties that are also of interest in the domain of Variational Quantum Algorithms. One of my contributions
+
+
+It is for that reason that I strongly believe that, in order for **NQS** to ~~overtake the world~~ become a viable, first-class algorithm we need to devise more controller, adaptive schemes that can automatically detect errors and correct for them. In the meantime, while we wait for the next scientist to revolutionise the field even more, there are also many other open questions...
+
 
 {% endmarkdown %}
 
@@ -54,23 +66,8 @@ In
 
 
 
-{% markdown %}
-
-## Official Complaint
-
-It is within your rights to file an official complaint with the responsible data protection authority, should you believe this website is in violation of your privacy. I would still prefer that you reach out to me personally first - otherwise please contact:
-
-__Österreichische Datenschutzbehörde__  
-Hohenstaufengasse 3  
-1010 Vienna, AT  
-[dsb@dsb.gv.at](mailto:dsb@dsb.gv.at)
-
-<p class="u-align-right"><em>Version: 2019-01-23</em></p>
-
-{% endmarkdown %}
-
 
 <div class="u-mb4">
-    <h2>Research and Software Projects</h2>
+    <h2>Bibliography</h2>
     {% include "mybibliography.njk" %}
 </div>

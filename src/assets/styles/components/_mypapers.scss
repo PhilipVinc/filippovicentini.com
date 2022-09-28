@@ -61,7 +61,7 @@
     &__inner {
         border-radius: 0.5rem;
         color: #fff;
-        padding: 1rem;
+        padding: 0.2rem 1rem;
         background-image: var(--gradient-full);
     }
 
@@ -70,16 +70,34 @@
         @include hyphenate;
         display: block;
         color: var(--text-color) !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
     }
 
     &__title {
         display: block;
         font-family: var(--font-family-display);
-        font-weight: 500;
-        font-size: 1.75rem;
+        font-weight: 300;
+        font-size: 1.0rem;
         line-height: 1.4;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0rem;
+        box-shadow: none;
+        border-bottom: none;
     }
+
+    &__authors {
+        font-family: var(--font-family-display);
+        font-size: 0.75rem;
+        font-weight: 100;
+        margin-bottom: 0rem !important;
+    }
+
+    &__reference {
+        font-family: var(--font-family-display);
+        font-weight: 100;
+        font-size: 0.5rem;
+    }
+
     &__tags {
         position: absolute;
         top: 0;

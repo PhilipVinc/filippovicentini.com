@@ -21,11 +21,13 @@
                         {% for author in paper.data.authors | slice(1, -1)%}, {{ author }}
                         {% endfor %}
                     </p>
+                    <p class="paper__reference">
                     {% if paper.data.preprint %}
                         Preprint: {{ paper.data.preprint }}
                     {% else %}
                         {{ paper.data.journal }} {% if paper.data.volume %}<b>{{ paper.data.volume }}</b>{%endif %} {% if paper.data.issue %}{{ paper.data.issue }}{% endif %} ({{paper.data.year }}) 
                     {% endif %}
+                    </p>
 
                     <hr/>
 
