@@ -11,15 +11,5 @@ layout: base
 
     <div class="secondarypage__content e-content markdown" itemprop="articleBody">
         {{ content | safe }}
-
-    </div>
-
-    <div class="secondarypage__content">
-        {% if collections.projects.length %}
-        <div class="u-mb4">
-            <h2>Research and Software Projects</h2>
-            {% include "featuredprojects.njk" %}
-        </div>
-        {% endif %}
     </div>
 </article>

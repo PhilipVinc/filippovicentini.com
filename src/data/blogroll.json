@@ -1,5 +1,5 @@
 [
-    {
+	{
         "title": "Manuel Matuzović",
         "url": "https://www.matuzo.at",
         "feed": "https://www.matuzo.at/feed.xml",
@@ -13,4 +13,5 @@
         "description": "Charlie is a front-end developer and speaker based in Berlin. She is best known for her work with Springer Nature and offending tech-bros on twitter.",
         "twitter": "whalecoiner"
     }
+
 ]
