@@ -67,8 +67,9 @@ Channeling the power of quantum mechanics is within the reach of actual technolo
 
 By improving our microscopical models of those devices to account for their dissipative nature it would be possible to improve the fidelity of their operations, to devise new experimental protocols, or even to design innovative devices. One of the most estabilished frameworks to treat dissipative systems is the Lindblad Master Equation, which accounts for the interaction with the environment. 
 
-Unfortunately, while integrating the Schroedinger's equation is already hard, solving the Lindblad Master Equation is even harder. Moreover, 
+Unfortunately, while integrating the Schroedinger's equation is already hard, solving the Lindblad Master Equation is even harder. Not only it involves evolving an object, the density matrix, which has more degrees of freedom, but it also involves matrices with less structure. For example, while the Hamiltonian is hermitian and therefore can be accurately diagonalised or used to build a Krylov space to study the time-evolution, the Liouvillian is non-hermitian and therefore many numerical issues eventually appear.
 
+It is for that reason that novel numerical tools might be particularly useful to answer open questions within the domain of Open Quantum Systems. And Neural Quantum States are one such numerical technique I have been investigating. The main challenge to their development is the fact that the density matrix has a lot of structure, such as a positive spectrum, that is hard to enforce through a Neural-Network description. [Over the years](https://arxiv.org/pdf/2206.13488), I've been working to find ways to devise better, more expressive, variational encodings for the density matrix.
 
 
 
