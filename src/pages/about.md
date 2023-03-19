@@ -10,9 +10,9 @@ permalink: /about/
 
 ## Bio
 
-In **April 2023** I will move to Paris to start as a Tenure-Track **Assistant Professor** at the [Laboratory for Theoretical Physics](https://www.cpht.polytechnique.fr) of Ecole Polytechnique. 
+I moved to Paris to start a tenure-track **Assistant Professorship** at the [Laboratory for Theoretical Physics](https://www.cpht.polytechnique.fr) of Ecole Polytechnique in **April 2023**.
 
-In the meantime, I have been a Postdoctoral Researcher since september 2020 at the [Computational Quantum Science Laboratory](https://www.epfl.ch/labs/cqsl/) of **EPFL**, working closely with prolific scientist ([and twitterer...](https://twitter.com/gppcarleo)) [Prof. Giuseppe Carleo]([https://twitter.com/gppcarleo](https://scholar.google.com/citations?user=e9I38PEAAAAJ)). In Lausanne I work on the foundations of **Neural Quantum States**; my goal is and has been to make those techniques more reliable and accessible to researchers. I have also developed several Open Source Software packages.
+Before that, I have been a Postdoctoral Researcher since september 2020 at the [Computational Quantum Science Laboratory](https://www.epfl.ch/labs/cqsl/) of **EPFL**, working closely with prolific scientist ([and twitterer...](https://twitter.com/gppcarleo)) [Prof. Giuseppe Carleo]([https://twitter.com/gppcarleo](https://scholar.google.com/citations?user=e9I38PEAAAAJ)). In Lausanne I work on the foundations of **Neural Quantum States**; my goal is and has been to make those techniques more reliable and accessible to researchers. I have also developed several Open Source Software packages.
 
 However, I was supposed to be at the [Center for Computational Quantum Physics](https://www.simonsfoundation.org/flatiron/center-for-computational-quantum-physics/) of the **Flatiron Institute** in **New York**, but a damned virus stranded me in Paris, from where I worked remotely before going to Lausane.
 
