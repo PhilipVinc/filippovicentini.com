@@ -47,6 +47,23 @@
             font-style: italic;
         }
     }
+    &__top_image {
+        position: relative;
+        display: block;
+        width: 100%; // Set a specific width
+        height: 40vw; // Set a specific height
+        margin-bottom: 2rem;
+    
+        .responsive-image {
+            object-fit: contain; // Add this line
+            border-radius: 4rem;
+            max-height: 40vw;
+            width: 100%; // Ensure the width is set to 100%
+            height: auto; // Set height to auto to maintain aspect ratio
+    
+        }
+    }
+
 }
 
 .postsection {

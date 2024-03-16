@@ -1,0 +1,25 @@
+---
+layout: base
+---
+<article class="post">
+    <header class="secondarypage__header">
+        <h1 class="secondarypage__title">{{ name }}</h1>
+        <p class="secondarypage__subtitle">{{ position | safe }}</p>
+        {% if subtitle %}
+            <p class="secondarypage__subtitle">{{ subtitle | safe }}</p>
+        {% endif %}
+    </header>
+    <div class="post__top_image">
+        {% set imgsrc %}/group/{{ image }}{% endset %}
+        <img
+            class="responsive-image js-responsive-image "
+            src="{{ imgsrc }}"
+            sizes="(min-width: 940px) 40vw, 100vw"
+            alt="A photo of {{ name }}"
+        />
+    </div>
+    <div class="secondarypage__content e-content markdown" itemprop="articleBody">
+        {{ content | safe }}
+    </div>
+
+</article>

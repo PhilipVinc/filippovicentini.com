@@ -1,4 +1,4 @@
 {
-    "layout": "group",     
+    "layout": "persona",     
     "permalink": "group/{{ page.fileSlug }}/index.html" 
 }
