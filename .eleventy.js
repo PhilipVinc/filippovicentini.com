@@ -18,10 +18,11 @@ const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
     projects: 'src/projects/**/*.md',
+    group: 'src/group/*.md',
     drafts: 'src/drafts/**/*.md',
     notes: 'src/notes/*.md',
     mypapers: 'src/mypapers/*.md',
-    media: '*.jpg|*.png|*.gif|*.mp4|*.webp|*.webm'
+    media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm'
 }
 
 module.exports = function (config) {
@@ -42,6 +43,10 @@ module.exports = function (config) {
     Object.keys(filters).forEach((filterName) => {
         config.addFilter(filterName, filters[filterName])
     })
+
+    config.addFilter('filterByPosition', function(arr, position) {
+        return arr.filter(item => item.data.position === position);
+    });
 
     // Latex
     config.addFilter("latex", (content) => {
@@ -80,6 +85,7 @@ module.exports = function (config) {
     config.addLayoutAlias('base', 'base.njk')
     config.addLayoutAlias('page', 'page.njk')
     config.addLayoutAlias('post', 'post.njk')
+    config.addLayoutAlias('group', 'group.njk')
     config.addLayoutAlias('project', 'project.njk')
     config.addLayoutAlias('draft', 'draft.njk')
     config.addLayoutAlias('note', 'note.njk')
@@ -90,6 +96,7 @@ module.exports = function (config) {
     config.addPassthroughCopy('src/assets/images')
     config.addPassthroughCopy('src/assets/fonts')
     config.addPassthroughCopy('src/assets/documents')
+    config.addPassthroughCopy('src/group')
 
     // Deep-Merge
     config.setDataDeepMerge(true)
@@ -133,6 +140,14 @@ module.exports = function (config) {
             .getFilteredByGlob(CONTENT_GLOBS.projects)
             .filter((item) => item.data.featured)
             .sort((a, b) => b.order - a.order)
+    })
+
+    // Collections: Group
+    config.addCollection('group', function (collection) {
+        return collection
+            .getFilteredByGlob(CONTENT_GLOBS.group)
+            //.filter((item) => item.data.featured)
+            //.sort((a, b) => b.order - a.order)
     })
 
     // Base Config
