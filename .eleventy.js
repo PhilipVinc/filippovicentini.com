@@ -14,6 +14,9 @@ const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
 const markdown = require('./utils/markdown.js')
 
+const GA_ENABLED = require("./src/data/site.json").googleAnalytics;
+const GA_ID = require("./src/data/site.json").googleAnalyticsId;
+
 const IS_PRODUCTION = process.env.ELEVENTY_ENV === 'production'
 const CONTENT_GLOBS = {
     posts: 'src/posts/**/*.md',
@@ -38,6 +41,10 @@ module.exports = function (config) {
     })
     config.addPlugin(pluginShareHighlight)
     config.addPlugin(mathjaxPlugin);
+
+    // Add globals
+    config.addGlobalData('GA_ENABLED', GA_ENABLED); 
+    config.addGlobalData('GA_ID', GA_ID); 
 
     // Filters
     Object.keys(filters).forEach((filterName) => {

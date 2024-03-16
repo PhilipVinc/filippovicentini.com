@@ -5,5 +5,7 @@
     "locale": "en_US",
     "domain": "filippovicentini.com",
     "url": "https://filippovicentini.com",
-    "repo": "https://github.com/PhilipVinc/filippovicentini.com"
+    "repo": "https://github.com/PhilipVinc/filippovicentini.com",
+    "googleAnalytics": true,
+    "googleAnalyticsId": "G-FXYMC0X75D"
 }

@@ -21,3 +21,16 @@
 {# Webmentions #}
 <link rel="pingback" href="https://webmention.io/filippovicentini.com/xmlrpc">
 <link rel="webmention" href="https://webmention.io/filippovicentini.com/webmention">
+
+{# Google Analytics #}
+{% if GA_ENABLED %}
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ GA_ID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ GA_ID }}');
+</script>
+{% endif %}
