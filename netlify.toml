@@ -24,11 +24,11 @@
     cache-control = "max-age=0,no-cache,no-store,must-revalidate"
 
 # Netlify subdomain
-#[[redirects]]
-#    from = "https://filippovicentini.netlify.com/*"
-#    to = "https://filippovicentini.com/:splat"
-#    status = 301
-#    force = true
+[[redirects]]
+    from = "https://filippovicentini.netlify.com/*"
+    to = "https://filippovicentini.com/:splat"
+    status = 301
+    force = true
 
 # Bots
 [[redirects]]
