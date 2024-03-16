@@ -1,0 +1,35 @@
+{% set positions = ['Postdoctoral Researcher', 'PhD Student', 'Intern'] %}
+
+{% for position in positions %}
+<h2>{{ position }}s</h2>
+
+<div class="featuredprojects">
+    <ul class="featuredprojects__list">
+        {% for person in collections.group | filterByPosition(position)  %}
+        {%- set webmentionUrl -%}{{ person.url | url | absoluteUrl(site.url) }}{%- endset -%}
+        <li class="featuredprojects__item">
+            <div class="featuredproject" style="{% if person.data.imagecolor %}background-color: {{ person.data.imagecolor }};{% endif %}">
+                {% if person.data.image %}
+                    {% set imgsrc %}/group/{{ person.data.image }}{% endset %}
+                    <picture>
+                        <img src="{{ imgsrc }}" alt="" width="500" height="500" class="featuredproject__image" />
+                    </picture>
+                {% endif %}
+                <div class="featuredproject__inner">
+                    <a href="{{ person.url | url }}" class="featuredproject__link">
+                        <span class="featuredproject__title">{% if person.data.name %}{{ person.data.name }}{% else %}{{ person.data.name }}{% endif %}</span>
+                    </a>
+                    <p class="featuredproject__description">
+                        {% if person.data.description %}
+                            {{ person.data.description }}
+                        {% else %}
+                            {{ person.templateContent | excerpt | striptags }}
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endfor %}

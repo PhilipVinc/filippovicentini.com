@@ -10,7 +10,7 @@ permalink: /about/
 
 ## Bio
 
-I moved to Paris to start a tenure-track **Assistant Professorship** at the [Laboratory for Theoretical Physics](https://www.cpht.polytechnique.fr) of Ecole Polytechnique in **April 2023**.
+I moved to Paris to start a tenure-track **Assistant Professorship** at the [Laboratory for Theoretical Physics](https://www.cpht.polytechnique.fr) of Ecole Polytechnique in **April 2023**. There I started a group (still looking for a catchy name) working on numerical methods, and the first PhD students and postdoc arrived throught the first half of academic year 2023/24.
 
 Before that, I have been a Postdoctoral Researcher since september 2020 at the [Computational Quantum Science Laboratory](https://www.epfl.ch/labs/cqsl/) of **EPFL**, working closely with prolific scientist ([and twitterer...](https://twitter.com/gppcarleo)) [Prof. Giuseppe Carleo]([https://twitter.com/gppcarleo](https://scholar.google.com/citations?user=e9I38PEAAAAJ)). In Lausanne I work on the foundations of **Neural Quantum States**; my goal is and has been to make those techniques more reliable and accessible to researchers. I have also developed several Open Source Software packages.
 

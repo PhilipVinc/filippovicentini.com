@@ -1,0 +1,4 @@
+{
+    "layout": "group",     
+    "permalink": "group/{{ page.fileSlug }}/index.html" 
+}
