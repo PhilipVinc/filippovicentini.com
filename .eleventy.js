@@ -55,6 +55,14 @@ module.exports = function (config) {
         return arr.filter(item => item.data.position === position);
     });
 
+    config.addFilter("sortByJoinDate", function(array) {
+        return array.sort(function(a, b) {
+            // Assuming startdate is in 'YYYY-MM-DD' format
+            return new Date(a.data.joindate) - new Date(b.data.joindate);
+        });
+    });
+
+
     // Latex
     config.addFilter("latex", (content) => {
       return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {

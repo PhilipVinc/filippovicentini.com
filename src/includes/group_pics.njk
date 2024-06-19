@@ -5,7 +5,7 @@
 
 <div class="featuredprojects">
     <ul class="featuredprojects__list">
-        {% for person in collections.group | filterByPosition(position)  %}
+        {% for person in collections.group | filterByPosition(position)  | sortByJoinDate %}
         {%- set webmentionUrl -%}{{ person.url | url | absoluteUrl(site.url) }}{%- endset -%}
         <li class="featuredprojects__item">
             <div class="featuredproject" style="{% if person.data.imagecolor %}background-color: {{ person.data.imagecolor }};{% endif %}">
