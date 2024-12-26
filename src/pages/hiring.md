@@ -8,10 +8,9 @@ permalink: /hiring/
 layout: hiring
 ---
 
-(Last update: June 2024)
+(Last update: December 2024)
 
-The core of the group is now composed by me, a PostDoc, two PhD students and some long-term Master interns.
-Another PhD student and Postdoc will be joining the group in October 2024.
+The core of the group is now composed by me, 2 PostDocs, 3 PhD students and some long-term Master interns.
 The group is based at the Theoretical Physics Laboratory (CPhT) of Ecole Polytechnique.
 If you are interested in any position below, contact me at my email address `name.surname@polytechnique.edu`.
 
