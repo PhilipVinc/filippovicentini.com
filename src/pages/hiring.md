@@ -8,22 +8,24 @@ permalink: /hiring/
 layout: hiring
 ---
 
-(Last update: December 2024)
+(Last update: September 2025)
 
-The core of the group is now composed by me, 2 PostDocs, 3 PhD students and some long-term Master interns.
-The group is based at the Theoretical Physics Laboratory (CPhT) of Ecole Polytechnique.
+The core of the group is now composed by me, 2 PostDocs, 4 PhD students and some long-term Master interns.
+The group is officially based at the Theoretical Physics Laboratory (CPhT) of Ecole Polytechnique, but we spend considerable time at College de France in the center of Paris.
 If you are interested in any position below, contact me at my email address `name.surname@polytechnique.edu`.
 
 ## Postdoctoral Researchers
 
-~~I am looking for **one senior Postdoc** to work on algorithms and applications of Neural Quantum States to work on my recently funded ANR project **Neural dynamics for Quantum Matter**.
-I am looking for profiles with prior experience in Machine Learning, ideally Neural Quantum States and/or experience on quantum information and/or numerical methods for fermionic systems.
-If you have worked with Path integral methods in the past that's a plus.
-A taste for quantum algorithms and quantum computing is appreciated.
-Spontaneous applications are encouraged.~~
+I am looking for **Postdocs** to work on algorithms and applications of Neural Quantum States to work on the following projects:
+  - Variational Methods for electronic structure problems (mainly foundation models & dynamics)
+  - Combining variational methods with data coming from experimental setups
+  - crazy, great ideas
 
-The position mentioned above has been filled in June 2024.
-I'm not actively recruiting anyone at the moment, however I will support strong candidates applying for a [Marie Sklodowska Curie Postdoctoral Fellowships](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships) in my group.
+I am looking for profiles with considerable prior experience in numerical physics. 
+A strong background in Machine Learning is a strong plus. 
+Knowledge of Neural Quantum States is not a requirement, but you should be knowledgeable in an area such as Variational Methods, quantum information, numerical methods for electronic structure, ML4Quantum or similar.
+A taste for quantum algorithms and quantum computing is appreciated.
+Spontaneous applications are encouraged.
 
 ---
 

@@ -1,16 +1,18 @@
 ---
 name: "Marie-Curie Postdoctoral Fellows"
 position: Postdoctoral Researcher
-joindate: 1-11-2024
+joindate: 1-12-2025
 image: hiring.webp
 imagecolor: "#252F3C"
 order: 3
 ---
 
-I'm not currently hiring a postdoc directly, however I would be happy to support strong candidates for a Marie-Curie Postdoctoral Fellowship in my group.
+I'm looking for one (maybe two) postdocs starting in December 2025.
 
-If you have an independent research agenda and want to pursue your own research goals, yet you think our group would be a good home for you and that there could be a productive scientific interaction, do get in touch.
+Candidates with a strong experience in machine learning AND/OR numerical methods for electronic structure AND/OR Variational Monte Carlo will be given priority.
 
-If I'm convinced you would be a good fit, and that your curriculum stands a chance for a fellowship, I am ready to sit down with you to ensure your application is of the highest quality.
+Similarly, candidates knowledgeable in quantum information/tensor networks or some interesting intersections of quantum information and Machine Learning will be considered.
 
-Look into [Marie Sklodowska Curie Postdoctoral Fellowships](https://marie-sklodowska-curie-actions.ec.europa.eu/actions/postdoctoral-fellowships) for more informations on the program.
+You will have to actively co-supervise at least one PhD student, so if you do not like working with students, you would not be a good fit.
+
+If you think you would be a good match, do not hesitate to contact me. Please send a cv and a short commntary of your research and what you'd like to do and I will get back to you.
