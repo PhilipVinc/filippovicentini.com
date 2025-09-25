@@ -7,7 +7,7 @@ Source code for [filippovicentini.com](https://filippovicentini.com), my persona
 ## Development
 
 ### Prerequisites
-- Node.js 18+ (configured in netlify.toml)
+- Node.js 22+ (configured in netlify.toml)
 
 ### Setup
 ```bash
