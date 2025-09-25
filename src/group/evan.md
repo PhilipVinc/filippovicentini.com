@@ -1,6 +1,6 @@
 ---
 name: "Evan Wonisch"
-position: Intern
+position: Past Member
 joindate: 1-10-2023
 image: evan.jpeg
 imagecolor: "#252F3C"
