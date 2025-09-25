@@ -48,7 +48,7 @@
     "infinite-scroll": "^4.0.1",
     "katex": "^0.16.2",
     "lodash": "^4.17.20",
-    "luxon": "^3.4.4",
+    "luxon": "^1.28.1",
     "markdown-it": "^12.0.2",
     "markdown-it-anchor": "^6.0.1",
     "markdown-it-footnote": "^3.0.3",
