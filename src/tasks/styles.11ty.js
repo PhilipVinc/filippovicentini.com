@@ -5,7 +5,7 @@
 const ENTRY_FILE_NAME = 'main.scss'
 
 const path = require('path')
-const sass = require('node-sass')
+const sass = require('sass')
 const CleanCSS = require('clean-css')
 const cssesc = require('cssesc')
 const isProd = process.env.ELEVENTY_ENV === 'production'
@@ -26,19 +26,22 @@ module.exports = class {
     // Compile Sass to CSS,
     // Embed Source Map in Development
     async compile(config) {
-        return new Promise((resolve, reject) => {
-            if (!isProd) {
-                config.sourceMap = true
-                config.sourceMapEmbed = true
-                config.outputStyle = 'expanded'
+        try {
+            const options = {
+                file: config.file,
+                style: isProd ? 'compressed' : 'expanded'
             }
-            return sass.render(config, (err, result) => {
-                if (err) {
-                    return reject(err)
-                }
-                resolve(result.css.toString())
-            })
-        })
+
+            if (!isProd) {
+                options.sourceMap = true
+                options.sourceMapIncludeSources = true
+            }
+
+            const result = sass.compile(config.file, options)
+            return result.css
+        } catch (err) {
+            throw err
+        }
     }
 
     // Minify & Optimize with CleanCSS in Production

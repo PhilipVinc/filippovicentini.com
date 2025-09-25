@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const webpack = require('webpack')
 const webpackConfig = require('../../webpack.config')
-const MemoryFileSystem = require('memory-fs')
+const { createFsFromVolume, Volume } = require('memfs')
 
 const ENTRY_POINTS = {
     main: 'src/assets/scripts/main.js',
@@ -25,7 +25,8 @@ module.exports = class {
     }
 
     async compile() {
-        const mfs = new MemoryFileSystem()
+        const vol = new Volume()
+        const mfs = createFsFromVolume(vol)
         const resolveTargets = (targets) =>
             Object.keys(targets).reduce((acc, key) => {
                 acc[key] = path.resolve(__dirname, '../../', targets[key])
@@ -38,8 +39,6 @@ module.exports = class {
         })
 
         compiler.outputFileSystem = mfs
-        compiler.inputFileSystem = fs
-        compiler.resolvers.normal.fileSystem = mfs
 
         this.compiledAssets = await new Promise((resolve, reject) => {
             compiler.run((err, stats) => {
@@ -52,7 +51,20 @@ module.exports = class {
                     return
                 }
 
-                const { assets } = stats.compilation
+                const outputPath = stats.compilation.outputOptions.path
+                const assets = {}
+
+                // Read files from memory filesystem
+                Object.keys(stats.compilation.assets).forEach(filename => {
+                    try {
+                        const filePath = path.join(outputPath, filename)
+                        const content = mfs.readFileSync(filePath, 'utf8')
+                        assets[filename] = content
+                    } catch (e) {
+                        console.warn(`Could not read ${filename}:`, e.message)
+                    }
+                })
+
                 resolve(assets)
             })
         })
@@ -63,7 +75,12 @@ module.exports = class {
             await this.compile()
         }
         const fileName = `${file}.js`
-        return this.compiledAssets[fileName].source()
+        const content = this.compiledAssets[fileName]
+        if (content) {
+            return content
+        } else {
+            throw new Error(`Could not get source for ${fileName}`)
+        }
     }
 
     async render({ file }) {
