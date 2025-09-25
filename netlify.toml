@@ -4,10 +4,11 @@
     functions = "functions"
 
 [build.environment]
-    NODE_VERSION = "22"
+    NODE_VERSION = "22.20.0"
 
-[[plugins]]
-    package = "./plugins/webmention-cache"
+# Temporarily disabled to test Node.js version issue
+# [[plugins]]
+#     package = "./plugins/webmention-cache"
 
 [[headers]]
     for = "/*"
