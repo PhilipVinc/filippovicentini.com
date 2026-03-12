@@ -9,3 +9,7 @@ order: 2
 
 Joined the group in November 2024, after a PhD in Tensor Networks and Quantum Information from SISSA.
 He works on the informational aspect of Neural Quantum States as well as on hybrid quantum algorithms, bridging classical and quantum machines.
+
+Alessandro has been awarded in 2025 a Hi!Paris Postdoctoral fellowship to bridge the gap between tensor network methods and Machine Learning.
+
+His papers can be found [here](https://scholar.google.com/citations?user=HXiSLuoAAAAJ)

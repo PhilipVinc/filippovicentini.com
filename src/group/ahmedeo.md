@@ -8,4 +8,5 @@ order: 2
 ---
 
 Joined the group in November 2023 after a M.Sc. in Physics and AI from La Sapienza University in Rome. 
-Currently studying fermionic systems. 
+
+He has studied several facets of training Neural Network Wavefunctions when simulating fermionic problems. You can find his papers [here](https://scholar.google.com/citations?user=ItJCZKwAAAAJ).
