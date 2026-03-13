@@ -1,0 +1,170 @@
+// Homepage section headings that are links
+.u-mb4 h2 > a {
+    color: var(--color-text);
+    border-bottom: 0;
+    box-shadow: none;
+
+    @include hover-focus {
+        color: var(--color-primary);
+        box-shadow: none;
+    }
+}
+
+// Homepage "In the Media" minimal link list
+.featuredmedia {
+    &__list {
+        list-style: none;
+        margin: 1.25rem 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.65rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+    }
+
+    &__outlet {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    &__link {
+        line-height: 1.4;
+        color: var(--color-text) !important;
+
+        @include hover-focus {
+            color: var(--color-primary) !important;
+        }
+    }
+
+    &__footer {
+        text-align: right;
+        margin-top: 0.5rem;
+    }
+
+    &__see-all {
+        font-size: 1.1rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+
+        .icon {
+            margin-left: 0.25rem;
+            transform: translateX(0);
+            transition: transform 0.2s $animation-curve-default;
+        }
+
+        @include hover-focus {
+            .icon {
+                transform: translateX(30%);
+            }
+        }
+    }
+}
+
+// Dedicated /media/ page cards
+.mediacards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1.5rem 0;
+
+    // suppress markdown link decoration inside cards
+    .markdown & a:not(.btn) {
+        box-shadow: none;
+        border-bottom: 0;
+
+        @include hover-focus {
+            box-shadow: none;
+            border-bottom-color: transparent;
+        }
+    }
+}
+
+.mediacard {
+    padding: 1.1rem 1.35rem;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-primary);
+    border-radius: 0 0.5rem 0.5rem 0;
+    background: linear-gradient(
+        180deg,
+        var(--color-bg-offset) 0%,
+        var(--color-bg) 100%
+    );
+    transition: border-color 0.2s $animation-curve-default,
+        box-shadow 0.2s $animation-curve-default;
+
+    &:hover,
+    &:focus-within {
+        box-shadow: 0 6px 20px -10px rgba(0, 0, 0, 0.2);
+    }
+
+    &__eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0.4rem;
+        flex-wrap: wrap;
+    }
+
+    &__outlet {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    &__kind {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        background-color: var(--color-border);
+        color: var(--color-text);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    &__date {
+        font-size: 0.8rem;
+        color: var(--color-text-offset);
+        margin-left: auto;
+    }
+
+    &__title {
+        font-family: var(--font-family-display);
+        font-size: 1.2rem;
+        line-height: 1.25;
+        margin: 0 0 0;
+    }
+
+    &__link {
+        color: var(--color-text) !important;
+        text-decoration: none;
+
+        @include hover-focus {
+            color: var(--color-primary) !important;
+        }
+    }
+
+    &__description {
+        font-size: 0.92rem;
+        color: var(--color-text-offset);
+        margin-top: 0.4rem;
+        margin-bottom: 0;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,28 @@
+---
+layout: page
+title: In the Media
+eleventyNavigation:
+  key: In the Media
+  order: 4
+permalink: /media/
+---
+
+Press coverage and media appearances about my research.
+
+<div class="mediacards">
+    {% for item in media.items %}
+    <div class="mediacard">
+        <div class="mediacard__eyebrow">
+            <span class="mediacard__outlet">{{ item.outlet }}</span>
+            <span class="mediacard__kind">{{ item.kind }}</span>
+            <span class="mediacard__date">{{ item.date }}</span>
+        </div>
+        <p class="mediacard__title">
+            <a href="{{ item.url }}" class="mediacard__link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+        </p>
+        {% if item.description %}
+        <p class="mediacard__description">{{ item.description }}</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,15 @@
+<div class="featuredmedia">
+    <ul class="featuredmedia__list">
+        {% for item in media.items %}
+        {% if item.featured %}
+        <li class="featuredmedia__item">
+            <span class="featuredmedia__outlet">{{ item.outlet }}</span>
+            <a href="{{ item.url }}" class="featuredmedia__link" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    <p class="featuredmedia__footer">
+        <a href="/media/" class="featuredmedia__see-all">See all {% icon "arrow-right" %}</a>
+    </p>
+</div>
