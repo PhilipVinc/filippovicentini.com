@@ -1,12 +1,29 @@
 // Homepage section headings that are links
 .u-mb4 h2 > a {
+    display: inline-flex;
+    align-items: center;
     color: var(--color-text);
     border-bottom: 0;
     box-shadow: none;
 
+    .icon {
+        width: 2.0rem;
+        height: 2.0rem;
+        margin-left: 0.4rem;
+        opacity: 0;
+        transform: translateX(-25%);
+        transition: opacity 0.2s $animation-curve-default,
+            transform 0.2s $animation-curve-default;
+    }
+
     @include hover-focus {
         color: var(--color-primary);
         box-shadow: none;
+
+        .icon {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
 }
 
