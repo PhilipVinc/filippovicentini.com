@@ -2,8 +2,9 @@
 tags: nav
 title: Work with Me
 eleventyNavigation:
-  key: Work with Me
-  order: 3
+  key: Work with Us
+  parent: Group
+  order: 1
 permalink: /hiring/
 layout: hiring
 ---

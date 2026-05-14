@@ -1,0 +1,18 @@
+{%- set isActivePage = page.url == subnavUrl -%}
+{%- for child in subnavChildren -%}
+    {%- if child.url == page.url -%}{%- set isActivePage = true -%}{%- endif -%}
+{%- endfor -%}
+<div class="subnav subnav--{{ subnavKey }}{% if isActivePage %} subnav--active{% endif %}">
+    <div class="subnav__inner">
+        <ul class="subnav__box">
+            <li class="nav__subitem{% if page.url == subnavUrl %} nav__subitem--active{% endif %}">
+                <a href="{{ subnavUrl }}" class="nav__sublink">{{ subnavParentLabel }}</a>
+            </li>
+            {%- for child in subnavChildren -%}
+            <li class="nav__subitem{% if child.url == page.url %} nav__subitem--active{% endif %}">
+                <a href="{{ child.url | url }}" class="nav__sublink">{{ child.title }}</a>
+            </li>
+            {%- endfor -%}
+        </ul>
+    </div>
+</div>

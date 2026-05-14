@@ -23,5 +23,20 @@
             -->
         </div>
 
+        {%- set subnavChildren = collections.all | eleventyNavigation('Group') -%}
+        {%- if subnavChildren.length -%}
+            {%- set subnavKey = 'group' -%}
+            {%- set subnavUrl = '/group/' -%}
+            {%- set subnavParentLabel = 'Members' -%}
+            {% include "subnav.njk" %}
+        {%- endif -%}
+        {%- set subnavChildren = collections.all | eleventyNavigation('About') -%}
+        {%- if subnavChildren.length -%}
+            {%- set subnavKey = 'about' -%}
+            {%- set subnavUrl = '/about/' -%}
+            {%- set subnavParentLabel = 'About' -%}
+            {% include "subnav.njk" %}
+        {%- endif -%}
+
     </div>
 </header>

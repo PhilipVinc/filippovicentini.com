@@ -23,7 +23,14 @@
             {%- if item.url -%}
                 {%- set isCurrent = (item.url == page.url) -%}
                 {%- set isParent = item.url != '/' and item.url in page.url -%}
-                <li class="nav__item{% if isCurrent or isParent %} nav__item--active{% endif %}">
+                {%- set children = collections.all | eleventyNavigation(item.key) -%}
+                {%- set isChildActive = false -%}
+                {%- for child in children -%}
+                    {%- if child.url == page.url -%}{%- set isChildActive = true -%}{%- endif -%}
+                {%- endfor -%}
+                {%- set isActive = isCurrent or isParent or isChildActive -%}
+                {%- set isSubnavOpen = isActive and children.length -%}
+                <li class="nav__item nav__item--key-{{ item.key | lower }}{% if isActive %} nav__item--active{% endif %}{% if children.length %} nav__item--has-children{% endif %}{% if isSubnavOpen %} nav__item--subnav-open{% endif %}">
                     <a
                         href="{% if isCurrent %}#main{% else %}{{ item.url | url }}{% endif %}"
                         class="nav__link"
@@ -32,12 +39,24 @@
                         <span class="nav__num" aria-hidden="true">0{{ loop.index }}</span>
                         {{ item.title }}
                     </a>
+                    {%- if children.length -%}
+                    <ul class="nav__submenu">
+                        <li class="nav__subitem{% if page.url == item.url %} nav__subitem--active{% endif %}">
+                            <a href="{{ item.url | url }}" class="nav__sublink">{{ item.title }}</a>
+                        </li>
+                        {%- for child in children -%}
+                        <li class="nav__subitem{% if child.url == page.url %} nav__subitem--active{% endif %}">
+                            <a href="{{ child.url | url }}" class="nav__sublink">{{ child.title }}</a>
+                        </li>
+                        {%- endfor -%}
+                    </ul>
+                    {%- endif -%}
                 </li>
             {%- endif -%}
         {%- endfor -%}
         </ul>
     </div>
-    
+
     {# Menu BG Animation #}
     <div class="nav__bg">
         <div class="nav__bg__circle"></div>

@@ -1,0 +1,95 @@
+.subnav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: z('nav');
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.25rem);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition-delay: 150ms;
+
+    &__inner {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        background-color: var(--color-bg);
+        border-top: 3px solid var(--color-primary);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        padding: 0.25rem 0;
+    }
+
+    // Always visible on the relevant section page
+    &--active {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+        // 150ms (hover hide delay) + 200ms (opacity fade) = wait for the departing
+        // subnav to fully disappear before this one starts reappearing
+        transition-delay: 350ms;
+    }
+
+    // Mobile: position back in flow (no hover transitions there anyway),
+    // and only show when on the section page
+    @include mq-down(lg) {
+        position: static;
+        transform: none;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+
+        &__box {
+            box-shadow: none;
+            border-top-width: 2px;
+        }
+    }
+}
+
+$subnav-keys: 'group', 'about';
+
+// Show each subnav only when its own nav item is hovered (desktop).
+// :not(.subnav--active) ensures we never override the 350ms delay on the
+// active subnav — it handles its own timing via the &--active rule above.
+@each $key in $subnav-keys {
+    .header:has(.nav__item--key-#{$key}:hover) .subnav--#{$key}:not(.subnav--active),
+    .header:has(.nav__item--key-#{$key}:focus-within) .subnav--#{$key}:not(.subnav--active),
+    .header:has(.subnav--#{$key}:hover) .subnav--#{$key}:not(.subnav--active) {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+        transition-delay: 0ms;
+    }
+
+    // When switching away from a different active subnav, wait for it to fade out
+    // before starting to show this one (0.2s = opacity transition duration of the hide)
+    .header:has(.subnav--active):has(.nav__item--key-#{$key}:hover) .subnav--#{$key}:not(.subnav--active),
+    .header:has(.subnav--active):has(.nav__item--key-#{$key}:focus-within) .subnav--#{$key}:not(.subnav--active) {
+        transition-delay: 0.2s;
+    }
+}
+
+// When a nav item is hovered, hide the active subnav of every OTHER section
+@each $key in $subnav-keys {
+    @each $other in $subnav-keys {
+        @if $key != $other {
+            .header:has(.nav__item--key-#{$key}:hover) .subnav--#{$other}.subnav--active,
+            .header:has(.nav__item--key-#{$key}:focus-within) .subnav--#{$other}.subnav--active,
+            .header:has(.subnav--#{$key}:hover) .subnav--#{$other}.subnav--active {
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-0.25rem);
+                transition-delay: 0ms;
+            }
+        }
+    }
+}
