@@ -55,7 +55,7 @@
     }
 }
 
-$subnav-keys: 'group', 'about';
+$subnav-keys: 'group', 'about', 'teaching';
 
 // Show each subnav only when its own nav item is hovered (desktop).
 // :not(.subnav--active) ensures we never override the 350ms delay on the
