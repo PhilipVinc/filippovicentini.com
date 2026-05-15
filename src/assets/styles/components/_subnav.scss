@@ -37,21 +37,9 @@
         transition-delay: 350ms;
     }
 
-    // Mobile: position back in flow (no hover transitions there anyway),
-    // and only show when on the section page
+    // Mobile: always hidden — the nav overlay's inline submenu handles these links
     @include mq-down(lg) {
-        position: static;
-        transform: none;
         display: none;
-
-        &--active {
-            display: block;
-        }
-
-        &__box {
-            box-shadow: none;
-            border-top-width: 2px;
-        }
     }
 }
 
