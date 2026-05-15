@@ -2,6 +2,8 @@
 layout: page
 permalink: /directions/
 title: Directions
+seo:
+  description: "How to find Filippo Vicentini at École Polytechnique (Palaiseau) and Collège de France (Paris): office location, public transport directions, and arrival instructions."
 ---
 
 This page explains how to find me at Ecole Polytechnique and/or College de France.

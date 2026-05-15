@@ -2,6 +2,8 @@
 layout: page
 permalink: /contact/
 title: Contact
+seo:
+  description: "Get in touch with Filippo Vicentini, Professor at École Polytechnique. Contact details and guidance on response times."
 ---
 
 To contact me, write an email to `name.surname@polytechnique.edu`. My name is Filippo, the other is the surname.

@@ -1,5 +1,9 @@
 ---
-title: Teaching
+title: "Computational & ML Methods for Quantum Physics"
+seo:
+  description: "Lecture notes, tutorial notebooks, and course materials for PHY_52006_EP — a 3rd-year/Master 1 course at École Polytechnique on Exact Diagonalization, Tensor Networks, Neural Quantum States, and ML-accelerated Molecular Dynamics."
+  courseCode: PHY_52006_EP
+  courseProvider: École Polytechnique
 permalink: /computational-physics/
 layout: hiring
 eleventyNavigation:

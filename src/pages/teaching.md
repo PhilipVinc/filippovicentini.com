@@ -1,5 +1,7 @@
 ---
 title: Teaching
+seo:
+  description: "Courses and educational materials by Filippo Vicentini at École Polytechnique: computational and ML methods for quantum physics, Neural Quantum States, and Variational Monte Carlo."
 permalink: /teaching/
 layout: hiring
 eleventyNavigation:

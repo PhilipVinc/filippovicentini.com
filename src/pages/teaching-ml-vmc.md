@@ -1,5 +1,8 @@
 ---
 title: "ML for Variational Monte Carlo"
+seo:
+  description: "Video lectures and materials on Machine Learning for Variational Monte Carlo in quantum physics: stochastic optimisation, natural gradient, and the NetKet framework. Originally from ICTP 2023."
+  courseProvider: ICTP
 permalink: /teaching-vmc-nqs/
 layout: hiring
 eleventyNavigation:

@@ -1,5 +1,7 @@
 ---
 title: Projets scientifiques collectifs (PSC)
+seo:
+  description: "Research projects for École Polytechnique students: 2nd-year PSC and 3rd-year PRL on neural-network quantum states, variational methods, and quantum many-body physics supervised by Filippo Vicentini."
 permalink: /psc/
 layout: hiring
 eleventyNavigation:

@@ -1,6 +1,9 @@
 ---
 layout: group
 title: The Group
+seo:
+  description: "Meet the PhD students, postdocs, and collaborators in Filippo Vicentini's research group at École Polytechnique, working on neural-network quantum states and computational quantum physics."
+  image: /assets/images/filippo-vicentini-board.jpeg
 tags: nav
 eleventyNavigation:
   key: Group

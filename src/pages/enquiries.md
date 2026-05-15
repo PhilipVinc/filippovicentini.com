@@ -1,5 +1,7 @@
 ---
 title: How to Apply
+seo:
+  description: "Guidance on how to write a strong application email for PhD, postdoc, or master internship positions in Filippo Vicentini's group at École Polytechnique."
 eleventyNavigation:
   key: How to Apply
   parent: Group

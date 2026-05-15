@@ -13,20 +13,27 @@
     {%- set title = page.date | readableDate %}
 {%- endif -%}
 
+{%- set seoDescription = seo.description or description or autoDescription or site.description -%}
+{%- set seoImage = seo.image or image -%}
+
 {# Page-Specific #}
-<meta name="description" content="{{ description or autoDescription or site.description }}">
-{%- if image -%}<meta name="image" content="{{ absolutePageUrl }}{{ image }}">{%- endif -%}
+<meta name="description" content="{{ seoDescription }}">
+{%- if seoImage -%}<meta name="image" content="{{ seoImage | url | absoluteUrl(site.url) }}">{%- endif -%}
 
 <meta property="og:title" content="{{ title or site.title }}">
-<meta property="og:description" content="{{ description or autoDescription or site.description }}">
+<meta property="og:description" content="{{ seoDescription }}">
 <meta property="og:url" content="{{ absolutePageUrl }}">
-<meta property="og:image" content="{%- if image -%}{{ absolutePageUrl }}{{ image }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
+<meta property="og:image" content="{%- if seoImage -%}{{ seoImage | url | absoluteUrl(site.url) }}{%- else -%}{{ author.avatar | url | absoluteUrl(site.url) }}{%- endif -%}">
 <meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
 
 {# Posts and Notes Get additional meta tags #}
 {%- if isPost or isNote -%}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ page.date | dateToISO }}">
+{%- elif layout == 'about' -%}
+    <meta property="og:type" content="profile">
+    <meta property="profile:first_name" content="Filippo">
+    <meta property="profile:last_name" content="Vicentini">
 {%- endif -%}
 
 {# General #}
@@ -35,27 +42,109 @@
 <meta property="og:locale" content="{{ site.locale }}">
 <meta name="twitter:site" content="@{{ author.social.twitter.name }}">
 <meta name="twitter:creator" content="@{{ author.social.twitter.name }}">
-<meta property="fb:app_id" content="127677017332959">
-
 <link rel="canonical" href="{{ absolutePageUrl }}">
 
 {# JSON LD #}
 <script type="application/ld+json">
     {
+        "@context":"https://schema.org",
+        "@type":"WebSite",
         "name":"{{ author.name }}",
         "description":"{{ site.description }}",
+        "url":"{{ site.url }}",
+        "image":"{{ author.avatar | url | absoluteUrl(site.url) }}",
+        "headline":"{{ site.title }}",
         "author": {
             "@type":"Person",
             "name":"{{ author.name }}"
         },
-        "@type":"WebSite",
-        "url":"{{ site.url }}",
-        "image":"{{ author.avatar | url | absoluteUrl(site.url) }}",
-        "headline":"{{ site.title }}",
         "sameAs":[
             "{{ author.social.twitter.url }}",
             "{{ author.social.github.url }}"
-        ],
-        "@context":"http://schema.org"
+        ]
     }
 </script>
+
+{%- if layout == 'about' or page.url == '/' -%}
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Person",
+        "name":"{{ author.name }}",
+        "url":"{{ site.url }}",
+        "image":"{{ author.avatar | url | absoluteUrl(site.url) }}",
+        "jobTitle":"Professor of Artificial Intelligence and Condensed Matter Physics",
+        "affiliation":{
+            "@type":"Organization",
+            "name":"École Polytechnique",
+            "url":"https://www.polytechnique.edu"
+        },
+        "worksFor":{
+            "@type":"Organization",
+            "name":"École Polytechnique",
+            "url":"https://www.polytechnique.edu"
+        },
+        "knowsAbout":[
+            "AI for Science",
+            "Machine Learning for Quantum Physics",
+            "Condensed Matter Physics",
+            "Neural-Network Quantum States",
+            "Quantum Monte Carlo",
+            "Open Quantum Systems",
+            "NetKet"
+        ],
+        "sameAs":[
+            "{{ author.social.twitter.url }}",
+            "{{ author.social.github.url }}",
+            "{{ author.social.linkedin.url }}",
+            "{{ author.social.orcid.url }}",
+            "{{ author.social.scholar.url }}"
+        ]
+    }
+</script>
+{%- endif -%}
+
+{%- if seo.courseProvider -%}
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"Course",
+        "name":"{{ title }}",
+        "description":"{{ seo.description }}",
+        "url":"{{ absolutePageUrl }}",
+        "provider":{
+            "@type":"Organization",
+            "name":"{{ seo.courseProvider }}"
+        },
+        "instructor":{
+            "@type":"Person",
+            "name":"{{ author.name }}",
+            "url":"{{ site.url }}"
+        }{% if seo.courseCode %},
+        "courseCode":"{{ seo.courseCode }}"{% endif %}
+    }
+</script>
+{%- endif -%}
+
+{%- if doi -%}
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"ScholarlyArticle",
+        "headline":"{{ title }}",
+        "name":"{{ title }}",
+        "url":"{{ absolutePageUrl }}",
+        "sameAs":"https://doi.org/{{ doi }}",
+        "datePublished":"{{ year }}",
+        "author":[
+            {%- for a in authors -%}
+            {"@type":"Person","name":"{{ a }}"}{% if not loop.last %},{% endif %}
+            {%- endfor -%}
+        ],
+        "isPartOf":{
+            "@type":"Periodical",
+            "name":"{{ journal }}"
+        }
+    }
+</script>
+{%- endif -%}

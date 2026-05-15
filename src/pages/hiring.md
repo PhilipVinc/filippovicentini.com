@@ -1,6 +1,8 @@
 ---
 tags: nav
 title: Work with Me
+seo:
+  description: "Open positions in Filippo Vicentini's group at École Polytechnique: postdoctoral researchers, PhD students, and master interns working on neural-network quantum states and computational quantum physics."
 eleventyNavigation:
   key: Work with Us
   parent: Group

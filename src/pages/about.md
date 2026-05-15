@@ -1,6 +1,9 @@
 ---
 layout: about
 title: About Me
+seo:
+  description: "Filippo Vicentini is a Professor of Artificial Intelligence and Condensed Matter Physics at École Polytechnique, Paris. He develops machine-learning-inspired algorithms for quantum physics and leads the NetKet open-source project."
+  image: /assets/images/filippo-vicentini-board.jpeg
 tags: nav
 eleventyNavigation:
   key: About
