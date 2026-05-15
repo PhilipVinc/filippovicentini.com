@@ -14,7 +14,7 @@ const anchorSlugify = (s) =>
 
 const markdown = markdownIt({
     html: true,
-    breaks: true,
+    breaks: false,
     typographer: true,
     code: false
 }).use(markdownItAnchor, {

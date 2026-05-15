@@ -13,7 +13,7 @@ In general I look at an email for ~1 minute while on the metro, and look for inf
 If there's no CV, transcript of records or publication list I can't gauge whether we're a match, so I will likely ignore or forget your email.
 
 For spontaneous applications, I have limited time, and due to the volume of enquiries I get I rather ignore them than get back to you unless you have an exceptional profile or I happen to have a lot of time available.
-If you don't hear back from me after ~4 days, feel free to send me 2 reminders.
+If you don't hear back from me after $\sim 4$ days, feel free to send me 2 reminders.
 After 3 total emails I have surely seen it, and if you don't hear back it means I'm either not hiring or not interested at the moment.
 It's not the most polite thing ever, i acknowledge, but my inbox is a battlefield.
 
