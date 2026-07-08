@@ -13,6 +13,8 @@ permalink: /about/
 
 ## Bio
 
+In September 2026 I will join Mistral AI's new fundamental research division to work on applications of the computational methods i develop to chemistry and other related problems. I will keep my academic research group whil also developing a new, more focused one within Mistral (FYI, we are hiring, get in touch!).
+
 I moved to Paris to start a tenure-track **Assistant Professorship** at the [Laboratory for Theoretical Physics](https://www.cpht.polytechnique.fr) of Ecole Polytechnique in **April 2023**. There I started a group (still looking for a catchy name) working on numerical methods, and the first PhD students and postdoc arrived throught the first half of academic year 2023/24.
 
 Before that, I have been a Postdoctoral Researcher since september 2020 at the [Computational Quantum Science Laboratory](https://www.epfl.ch/labs/cqsl/) of **EPFL**, working closely with prolific scientist ([and twitterer...](https://twitter.com/gppcarleo)) [Prof. Giuseppe Carleo](https://scholar.google.com/citations?user=e9I38PEAAAAJ). In Lausanne I work on the foundations of **Neural Quantum States**; my goal is and has been to make those techniques more reliable and accessible to researchers. I have also developed several Open Source Software packages.

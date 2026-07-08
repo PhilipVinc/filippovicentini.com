@@ -11,7 +11,9 @@ permalink: /hiring/
 layout: hiring
 ---
 
-(Last update: September 2025)
+> **📢 Mistral AI4Science — postdoc & PhD.** I am recruiting a **Researcher (postdoc-equivalent, permanent contract)** and a **CIFRE PhD student** to work with me on Neural Quantum States for chemistry, at [Mistral AI](https://mistral.ai) in Paris, with extremely competitive salaries. Get in touch with me first for a fast track — [full announcement](https://www.netket.org/posts/08-nqs-chemistry-positions/).
+
+(Last update: July 2026)
 
 The core of the group is now composed by me, 2 PostDocs, 4 PhD students and some long-term Master interns.
 The group is officially based at the Theoretical Physics Laboratory (CPhT) of Ecole Polytechnique, but we spend considerable time at College de France in the center of Paris.
