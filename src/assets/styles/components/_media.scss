@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 // Homepage section headings that are links
 .u-mb4 h2 > a {
     display: inline-flex;
@@ -12,11 +15,11 @@
         margin-left: 0.4rem;
         opacity: 0;
         transform: translateX(-25%);
-        transition: opacity 0.2s $animation-curve-default,
-            transform 0.2s $animation-curve-default;
+        transition: opacity 0.2s variables.$animation-curve-default,
+            transform 0.2s variables.$animation-curve-default;
     }
 
-    @include hover-focus {
+    @include mixins.hover-focus {
         color: var(--color-primary);
         box-shadow: none;
 
@@ -59,7 +62,7 @@
         line-height: 1.4;
         color: var(--color-text) !important;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             color: var(--color-primary) !important;
         }
     }
@@ -78,10 +81,10 @@
         .icon {
             margin-left: 0.25rem;
             transform: translateX(0);
-            transition: transform 0.2s $animation-curve-default;
+            transition: transform 0.2s variables.$animation-curve-default;
         }
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             .icon {
                 transform: translateX(30%);
             }
@@ -101,7 +104,7 @@
         box-shadow: none;
         border-bottom: 0;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             box-shadow: none;
             border-bottom-color: transparent;
         }
@@ -118,8 +121,8 @@
         var(--color-bg-offset) 0%,
         var(--color-bg) 100%
     );
-    transition: border-color 0.2s $animation-curve-default,
-        box-shadow 0.2s $animation-curve-default;
+    transition: border-color 0.2s variables.$animation-curve-default,
+        box-shadow 0.2s variables.$animation-curve-default;
 
     &:hover,
     &:focus-within {
@@ -172,7 +175,7 @@
         color: var(--color-text) !important;
         text-decoration: none;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             color: var(--color-primary) !important;
         }
     }

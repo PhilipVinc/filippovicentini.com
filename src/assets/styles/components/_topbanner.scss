@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .topbanner {
     background-color: #000;
     color: #fff;
@@ -8,7 +10,7 @@
         text-decoration: underline;
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         text-align: center;
     }
 }

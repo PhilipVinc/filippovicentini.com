@@ -1,6 +1,8 @@
+@use "../utils/functions";
+
 .titlebar {
     position: fixed;
-    z-index: z('titlebar');
+    z-index: functions.z('titlebar');
     left: 0;
     right: 0;
     top: 0;

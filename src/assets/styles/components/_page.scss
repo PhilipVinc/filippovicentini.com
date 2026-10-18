@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../base/typography";
+
 .page {
     &__header {
         padding: 2rem 0;
@@ -6,7 +9,7 @@
         @extend .lead;
     }
     &__content {
-        @include container-narrow;
+        @include mixins.container-narrow;
         padding-bottom: 2rem;
 
         &--fullwidth {
@@ -14,7 +17,7 @@
         }
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         &__header {
             padding: 4rem 0;
             text-align: center;
@@ -28,7 +31,7 @@
         }
     }
 
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         &__header {
             padding: 5rem 0;
         }

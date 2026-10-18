@@ -1,7 +1,7 @@
 ---
 name: "Nathan Moumique"
 position: PhD Student
-joindate: 1-10-2025
+joindate: 2025-10-01
 imagecolor: "#252F3C"
 order: 4
 image: nathan.jpg

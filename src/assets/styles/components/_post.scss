@@ -1,10 +1,14 @@
+@use "../utils/mixins";
+@use "../base/typography";
+@use "page";
+
 .post {
     &__header {
         @extend .page__header;
     }
     &__title {
         @extend .page__title;
-        @include mq(lg) {
+        @include mixins.mq(lg) {
             font-size: 6rem !important;
         }
     }
@@ -16,7 +20,7 @@
         margin: 1rem 0;
         color: var(--color-text-offset);
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             justify-content: center;
             font-size: 1.25rem;
         }
@@ -31,10 +35,10 @@
         color: var(--color-secondary);
     }
     &__content {
-        @include container-narrow;
+        @include mixins.container-narrow;
     }
     &__footer {
-        @include container-narrow;
+        @include mixins.container-narrow;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -67,7 +71,7 @@
 }
 
 .postsection {
-    @include container-narrow;
+    @include mixins.container-narrow;
     padding: 2rem 0;
     border-top: 1px solid var(--color-border);
 
@@ -89,7 +93,7 @@
         align-items: center;
         color: var(--color-text-offset);
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             color: var(--color-text);
         }
 
@@ -99,7 +103,7 @@
         }
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         padding: 3rem 0;
     }
 }

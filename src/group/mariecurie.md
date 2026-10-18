@@ -1,7 +1,7 @@
 ---
 name: "Marie-Curie Postdoctoral Fellows"
 position: Postdoctoral Researcher
-joindate: 1-12-2026
+joindate: 2026-12-01
 image: hiring.webp
 imagecolor: "#252F3C"
 order: 3

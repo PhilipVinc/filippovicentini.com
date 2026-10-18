@@ -1,7 +1,7 @@
 ---
 name: "Niccolò Baldelli"
 position: Postdoctoral Researcher
-joindate: 1-5-2026
+joindate: 2026-05-01
 image: niccolo.jpg
 imagecolor: "#252F3C"
 order: 3

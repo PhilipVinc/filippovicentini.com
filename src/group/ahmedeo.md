@@ -1,7 +1,7 @@
 ---
 name: "Amedeo Shokry"
 position: PhD Student
-joindate: 1-11-2023
+joindate: 2023-11-01
 image: ahmedeo.png
 imagecolor: "#252F3C"
 order: 2

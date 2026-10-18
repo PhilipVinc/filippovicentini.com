@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../base/typography";
+
 .secondarypage {
     &__header {
         padding: 2rem 0;
@@ -6,7 +9,7 @@
         @extend .lead;
     }
     &__content {
-        @include container-narrow;
+        @include mixins.container-narrow;
         padding-bottom: 2rem;
         max-width: 60rem;
 
@@ -43,7 +46,7 @@
         }
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         &__photoblock {
             display: flex;
             align-items: center;
@@ -73,7 +76,7 @@
         }
     }
 
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         &__header {
             padding: 5rem 0;
         }
@@ -81,7 +84,7 @@
             font-size: 7rem;
         }
     }
-    @include mq(sm) {
+    @include mixins.mq(sm) {
         &__photo {
             height: 30rem;
         }

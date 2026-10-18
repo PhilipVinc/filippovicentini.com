@@ -1,7 +1,7 @@
 ---
 name: "Adrian Kahn"
 position: PhD Student
-joindate: 1-10-2023
+joindate: 2023-10-01
 image: adrian.jpg
 imagecolor: "#252F3C"
 order: 1

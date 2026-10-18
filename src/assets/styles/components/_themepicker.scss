@@ -1,3 +1,5 @@
+@use "../utils/variables";
+
 .themepicker {
     display: block;
     width: 100%;
@@ -7,14 +9,14 @@
     max-height: 0;
     overflow: hidden;
     position: relative;
-    transition: max-height 0.4s $animation-curve-default;
+    transition: max-height 0.4s variables.$animation-curve-default;
 
     &.is-open {
         max-height: 11rem;
     }
 
     &__title {
-        font-family: $font-family-sans-serif;
+        font-family: variables.$font-family-sans-serif;
         font-size: 1em;
         text-transform: uppercase;
         text-align: center;
@@ -50,7 +52,7 @@
         position: relative;
         border-radius: 0.5em;
         transform: scale(1);
-        transition: transform 0.2s $animation-curve-default;
+        transition: transform 0.2s variables.$animation-curve-default;
 
         & + & {
             margin-left: 1rem;
@@ -58,7 +60,7 @@
 
         &:hover {
             transform: scale(1.05);
-            box-shadow: $box-shadow;
+            box-shadow: variables.$box-shadow;
             z-index: 1;
         }
         &.is-active {

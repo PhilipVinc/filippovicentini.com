@@ -1,9 +1,12 @@
+@use "functions";
+@use "variables";
+
 //--------------------
 // SCSS MIXINS
 //--------------------
 
 @mixin mq($name) {
-    $min: breakpoint-min($name, $breakpoints);
+    $min: functions.breakpoint-min($name, variables.$breakpoints);
     @if $min {
         @media (min-width: $min) {
             @content;
@@ -14,7 +17,7 @@
 }
 
 @mixin mq-down($name) {
-    $min: breakpoint-min($name, $breakpoints);
+    $min: functions.breakpoint-min($name, variables.$breakpoints);
     @if $min {
         @media (max-width: ($min - 1px)) {
             @content;
@@ -96,8 +99,8 @@
 
 @mixin container-narrow() {
     width: 100%;
-    max-width: $container-narrow-max-width;
-    max-width: var(--content-max-width, #{$container-narrow-max-width});
+    max-width: variables.$container-narrow-max-width;
+    max-width: var(--content-max-width, #{variables.$container-narrow-max-width});
     margin-left: auto;
     margin-right: auto;
 }

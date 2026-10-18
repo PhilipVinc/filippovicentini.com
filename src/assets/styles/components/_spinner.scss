@@ -1,3 +1,9 @@
+@use "sass:math";
+
+@use "../utils/functions";
+@use "../utils/mixins";
+@use "../utils/variables";
+
 // Spinner Component
 
 // Configuration Variables
@@ -12,8 +18,7 @@ $spinner-arc-time: 1333ms;
 // How much the start location of the arc should rotate each time.
 $spinner-arc-start-rot: 216deg;
 
-$spinner-duration: 360 * $spinner-arc-time /
-    (strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size)));
+$spinner-duration: math.div(360 * $spinner-arc-time, functions.strip-units($spinner-arc-start-rot + (360deg - $spinner-arc-size)));
 
 // Elements
 // ============================================
@@ -21,10 +26,10 @@ $spinner-duration: 360 * $spinner-arc-time /
 .spinner {
     display: inline-block;
     position: relative;
-    z-index: z('content-overlay');
+    z-index: functions.z('content-overlay');
 
     &--centered {
-        @include coverall;
+        @include mixins.coverall;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -49,30 +54,30 @@ $spinner-duration: 360 * $spinner-arc-time /
 
 .spinner__layer--1 {
     animation: spinner__fill-unfill-rotate (4 * $spinner-arc-time)
-            $animation-curve-default infinite both,
+            variables.$animation-curve-default infinite both,
         spinner__layer-1-fade-in-out (4 * $spinner-arc-time)
-            $animation-curve-default infinite both;
+            variables.$animation-curve-default infinite both;
 }
 
 .spinner__layer--2 {
     animation: spinner__fill-unfill-rotate (4 * $spinner-arc-time)
-            $animation-curve-default infinite both,
+            variables.$animation-curve-default infinite both,
         spinner__layer-2-fade-in-out (4 * $spinner-arc-time)
-            $animation-curve-default infinite both;
+            variables.$animation-curve-default infinite both;
 }
 
 .spinner__layer--3 {
     animation: spinner__fill-unfill-rotate (4 * $spinner-arc-time)
-            $animation-curve-default infinite both,
+            variables.$animation-curve-default infinite both,
         spinner__layer-3-fade-in-out (4 * $spinner-arc-time)
-            $animation-curve-default infinite both;
+            variables.$animation-curve-default infinite both;
 }
 
 .spinner__layer--4 {
     animation: spinner__fill-unfill-rotate (4 * $spinner-arc-time)
-            $animation-curve-default infinite both,
+            variables.$animation-curve-default infinite both,
         spinner__layer-4-fade-in-out (4 * $spinner-arc-time)
-            $animation-curve-default infinite both;
+            variables.$animation-curve-default infinite both;
 }
 
 @keyframes spinner__fill-unfill-rotate {
@@ -250,7 +255,7 @@ $spinner-duration: 360 * $spinner-arc-time /
     .spinner__left & {
         border-right-color: transparent !important;
         transform: rotate(129deg);
-        animation: spinner__left-spin $spinner-arc-time $animation-curve-default
+        animation: spinner__left-spin $spinner-arc-time variables.$animation-curve-default
             infinite both;
     }
 
@@ -259,6 +264,6 @@ $spinner-duration: 360 * $spinner-arc-time /
         border-left-color: transparent !important;
         transform: rotate(-129deg);
         animation: spinner__right-spin $spinner-arc-time
-            $animation-curve-default infinite both;
+            variables.$animation-curve-default infinite both;
     }
 }

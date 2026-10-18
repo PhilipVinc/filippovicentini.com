@@ -3,10 +3,7 @@ require('dotenv').config()
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const pluginNavigation = require('@11ty/eleventy-navigation')
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginPageAssets = require('eleventy-plugin-page-assets')
 const pluginShareHighlight = require('eleventy-plugin-share-highlight')
-const Cite = require('citation-js');
-const katex = require("katex");
 const mathjaxPlugin = require("eleventy-plugin-mathjax");
 
 const filters = require('./utils/filters.js')
@@ -24,8 +21,7 @@ const CONTENT_GLOBS = {
     group: 'src/group/*.md',
     drafts: 'src/drafts/**/*.md',
     notes: 'src/notes/*.md',
-    mypapers: 'src/mypapers/*.md',
-    media: '*.jpg|*.jpeg|*.png|*.gif|*.mp4|*.webp|*.webm'
+    mypapers: 'src/mypapers/*.md'
 }
 
 module.exports = function (config) {
@@ -33,12 +29,6 @@ module.exports = function (config) {
     config.addPlugin(pluginRss)
     config.addPlugin(pluginNavigation)
     config.addPlugin(pluginSyntaxHighlight)
-    config.addPlugin(pluginPageAssets, {
-        mode: 'directory',
-        postsMatching: 'src/posts/*/*.md',
-        assetsMatching: CONTENT_GLOBS.media,
-        silent: true
-    })
     config.addPlugin(pluginShareHighlight)
     config.addPlugin(mathjaxPlugin);
 
@@ -56,20 +46,10 @@ module.exports = function (config) {
     });
 
     config.addFilter("sortByJoinDate", function(array) {
-        return array.sort(function(a, b) {
-            // Assuming startdate is in 'YYYY-MM-DD' format
+        // joindate must be in 'YYYY-MM-DD' format (YAML parses it as a Date)
+        return [...array].sort(function(a, b) {
             return new Date(a.data.joindate) - new Date(b.data.joindate);
         });
-    });
-
-
-    // Latex
-    config.addFilter("latex", (content) => {
-      return content.replace(/\$\$(.+?)\$\$/g, (_, equation) => {
-        const cleanEquation = equation.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-
-        return katex.renderToString(cleanEquation, { throwOnError: false });
-      });
     });
 
     // Transforms
@@ -86,8 +66,6 @@ module.exports = function (config) {
         ? markdown.renderInline(content)
         : markdown.render(content);
     });
-    config.addPairedShortcode("bibtex", 
-        require('eleventy-plugin-bibtex'));
 
 
     // Asset Watch Targets

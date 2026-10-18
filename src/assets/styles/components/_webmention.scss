@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 .webmention {
     display: flex;
     flex-direction: column;
@@ -62,7 +64,7 @@
         display: flex;
         align-items: center;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             text-decoration: underline;
         }
 

@@ -1,21 +1,28 @@
+@use "sass:map";
+@use "sass:math";
+@use "variables";
+
 //--------------------
 // SCSS CUSTOM FUNCTIONS
 //--------------------
 
-@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
-    $min: map-get($breakpoints, $name);
-    @return if($min != 0, $min, null);
+@function breakpoint-min($name, $breakpoints: variables.$grid-breakpoints) {
+    $min: map.get($breakpoints, $name);
+    @if $min != 0 {
+        @return $min;
+    }
+    @return null;
 }
 
 // z-index layering
 @function z($layer) {
-    @if map-has-key($z-layers, $layer) == false {
+    @if map.has-key(variables.$z-layers, $layer) == false {
         @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
     }
 
-    @return map-get($z-layers, $layer);
+    @return map.get(variables.$z-layers, $layer);
 }
 
 @function strip-units($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, $value * 0 + 1);
 }

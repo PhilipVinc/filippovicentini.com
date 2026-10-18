@@ -1,4 +1,4 @@
-const htmlmin = require('html-minifier')
+const htmlmin = require('html-minifier-terser')
 
 const shouldTransformHTML = (outputPath) =>
     outputPath &&
@@ -7,9 +7,9 @@ const shouldTransformHTML = (outputPath) =>
 
 process.setMaxListeners(Infinity)
 module.exports = {
-    htmlmin: function (content, outputPath) {
+    htmlmin: async function (content, outputPath) {
         if (shouldTransformHTML(outputPath)) {
-            return htmlmin.minify(content, {
+            return await htmlmin.minify(content, {
                 useShortDoctype: true,
                 removeComments: true,
                 collapseWhitespace: true

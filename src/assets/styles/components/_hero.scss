@@ -1,3 +1,6 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .hero {
     display: flex;
     flex: 1 0 auto;
@@ -5,7 +8,7 @@
     justify-content: center;
     padding: 2rem 0 4rem;
 
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         min-height: 300px;
     }
 
@@ -19,7 +22,7 @@
         line-height: 1;
         margin-bottom: 0.33em;
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             font-size: 3.875rem; //94px
         }
     }
@@ -38,7 +41,7 @@
         line-height: 1.4;
         text-align: justify;
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             font-size: 1.5rem;
         }
     }
@@ -46,7 +49,7 @@
     &__br {
         display: none;
 
-        @include mq(xl) {
+        @include mixins.mq(xl) {
             display: block;
         }
     }
@@ -84,10 +87,10 @@
         }
 
         &--codista::after {
-            background-color: $codista-brand-primary;
+            background-color: variables.$codista-brand-primary;
         }
         &--twitter::after {
-            background-color: $twitter-brand-primary;
+            background-color: variables.$twitter-brand-primary;
         }
     }
 }

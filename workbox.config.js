@@ -10,7 +10,7 @@ module.exports = {
     runtimeCaching: [
         {
             urlPattern: /\.(?:png|jpg|jpeg|gif|webp|avif)$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
                 cacheName: 'images',
                 expiration: {

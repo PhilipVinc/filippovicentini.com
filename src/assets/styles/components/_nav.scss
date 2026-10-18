@@ -1,3 +1,7 @@
+@use "../utils/functions";
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .nav {
     display: flex;
     align-items: center;
@@ -56,7 +60,7 @@
         color: var(--color-text);
         transition: color 0.2s linear;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             color: var(--color-text);
         }
     }
@@ -95,7 +99,7 @@
         pointer-events: none;
         transform: translateY(-0.5rem);
         transition: opacity 0.2s ease, transform 0.2s ease;
-        z-index: z('nav');
+        z-index: functions.z('nav');
     }
 
     &__subitem {
@@ -131,7 +135,7 @@
             transition: width 0.2s cubic-bezier(0.86, 0, 0.07, 1);
         }
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             color: var(--color-text);
 
             &::before {
@@ -144,7 +148,7 @@
     // MOBILE VERSION (TABLET AND DOWN)
     // ==================================
 
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         &__content {
             display: none;
             width: 100%;
@@ -154,7 +158,7 @@
             overflow-y: auto;
 
             position: fixed;
-            z-index: z('nav');
+            z-index: functions.z('nav');
             top: 0;
             left: 0;
         }
@@ -167,7 +171,7 @@
             opacity: 0;
             transform: translateY(1.5rem);
             transition: opacity 0.5s linear 0.25s,
-                transform 0.5s $animation-curve-default 0.25s;
+                transform 0.5s variables.$animation-curve-default 0.25s;
         }
 
         &__item {
@@ -203,7 +207,7 @@
         &__togglebtn {
             display: flex;
             position: relative;
-            z-index: z('nav') + 1;
+            z-index: functions.z('nav') + 1;
         }
 
         // Mobile submenu: always-visible inline list
@@ -234,7 +238,7 @@
                 display: none;
             }
 
-            @include hover-focus {
+            @include mixins.hover-focus {
                 color: #fff !important;
             }
         }
@@ -250,7 +254,7 @@
 // ==================================
 
 .nav--open {
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         .nav__content {
             display: flex;
         }
@@ -281,7 +285,7 @@
 
 .nav__bg {
     position: fixed;
-    z-index: z('nav') - 1;
+    z-index: functions.z('nav') - 1;
     top: 16px;
     right: 5%;
     height: 4px;
@@ -313,10 +317,10 @@
         will-change: transform;
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         top: 50px;
     }
-    @include mq(lg) {
+    @include mixins.mq(lg) {
         display: none;
     }
 }

@@ -1,12 +1,9 @@
-const htmlmin = require('html-minifier')
 const markdownIt = require('markdown-it')()
 const random = require('lodash/random')
 
+// collapse whitespace in these small snippets (full pages are minified by the htmlmin transform)
 const minify = (content) =>
-    htmlmin.minify(content, {
-        removeComments: true,
-        collapseWhitespace: true
-    })
+    content.replace(/\s+/g, ' ').replace(/>\s+</g, '><').trim()
 
 const Spinner = () => {
     const layer = (

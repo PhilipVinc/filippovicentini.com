@@ -1,9 +1,12 @@
+@use "../utils/functions";
+@use "../utils/mixins";
+
 .subnav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    z-index: z('nav');
+    z-index: functions.z('nav');
 
     opacity: 0;
     pointer-events: none;
@@ -38,7 +41,7 @@
     }
 
     // Mobile: always hidden — the nav overlay's inline submenu handles these links
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         display: none;
     }
 }

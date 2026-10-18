@@ -1,10 +1,13 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 // Main Site Layout
 
 body {
     overflow-x: hidden;
     transition: color 0.15s, background-color 0.15s;
 
-    @include mq-down(lg) {
+    @include mixins.mq-down(lg) {
         &.no-scroll {
             height: 100vh;
             overflow: hidden;
@@ -18,7 +21,7 @@ body {
     min-height: 100%;
     min-height: 100vh;
     position: relative;
-    transition: transform 0.3s $animation-curve-default;
+    transition: transform 0.3s variables.$animation-curve-default;
     padding-top: env(titlebar-area-height, 0);
 
     .header,
@@ -44,9 +47,9 @@ body {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    max-width: $container-max-width;
+    max-width: variables.$container-max-width;
 
     &--narrow {
-        max-width: $container-narrow-max-width;
+        max-width: variables.$container-narrow-max-width;
     }
 }

@@ -6,69 +6,68 @@
 // UTILITIES
 //--------------------
 
-@import 'utils/functions';
-@import 'utils/variables';
-@import 'utils/mixins';
+@use 'utils/functions';
+@use 'utils/variables';
+@use 'utils/mixins';
 
 //--------------------
 // BASE MODULES
 // partials with global scope
 //--------------------
 
-@import 'base/fonts';
-@import 'base/normalize';
-@import 'base/reboot';
-@import 'base/layout';
-@import 'base/typography';
-@import 'base/focus';
-@import 'base/utilities';
-@import 'base/animation';
-@import 'base/syntax';
+@use 'base/fonts';
+@use 'base/normalize';
+@use 'base/reboot';
+@use 'base/layout';
+@use 'base/typography';
+@use 'base/focus';
+@use 'base/utilities';
+@use 'base/animation';
+@use 'base/syntax';
 
 //--------------------
 // COMPONENTS
 // partials with local scope to a component
 //--------------------
 
-@import 'components/header';
-@import 'components/footer';
-@import 'components/topbanner';
-@import 'components/titlebar';
-@import 'components/nav';
-@import 'components/subnav';
-@import 'components/hero';
-@import 'components/icon';
-@import 'components/button';
-@import 'components/form';
-@import 'components/postlist';
-@import 'components/about';
-@import 'components/markdown';
-@import 'components/post';
-@import 'components/page';
-@import 'components/note';
-@import 'components/otherposts';
-@import 'components/webmention';
-@import 'components/responsive-image';
-@import 'components/blogroll';
-@import 'components/alert';
-@import 'components/spinner';
-@import 'components/sharer';
-@import 'components/themepicker';
-@import 'components/featuredposts';
-@import 'components/signup';
-@import 'components/callout';
+@use 'components/header';
+@use 'components/footer';
+@use 'components/topbanner';
+@use 'components/titlebar';
+@use 'components/nav';
+@use 'components/subnav';
+@use 'components/hero';
+@use 'components/icon';
+@use 'components/button';
+@use 'components/form';
+@use 'components/postlist';
+@use 'components/about';
+@use 'components/markdown';
+@use 'components/post';
+@use 'components/page';
+@use 'components/note';
+@use 'components/otherposts';
+@use 'components/webmention';
+@use 'components/responsive-image';
+@use 'components/alert';
+@use 'components/spinner';
+@use 'components/sharer';
+@use 'components/themepicker';
+@use 'components/featuredposts';
+@use 'components/signup';
+@use 'components/callout';
 
-@import 'components/featuredprojects';
-@import 'components/media';
-@import 'components/project';
+@use 'components/featuredprojects';
+@use 'components/media';
+@use 'components/project';
 
-@import 'components/mypapers';
-@import 'components/secondarypage';
+@use 'components/mypapers';
+@use 'components/secondarypage';
 
 //--------------------
 // VENDOR
 // third-party styles
 //--------------------
 
-@import 'vendor/speedlify';
-@import 'vendor/share-highlight';
+@use 'vendor/speedlify';
+@use 'vendor/share-highlight';

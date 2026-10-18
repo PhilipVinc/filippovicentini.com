@@ -1,7 +1,7 @@
 ---
 name: "Rajah Nutakki"
 position: Past Member
-joindate: 1-04-2024
+joindate: 2024-04-01
 image: rajah.jpg
 imagecolor: "#252F3C"
 order: 1

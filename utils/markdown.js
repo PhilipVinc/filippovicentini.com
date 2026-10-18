@@ -18,11 +18,12 @@ const markdown = markdownIt({
     typographer: true,
     code: false
 }).use(markdownItAnchor, {
-    permalink: true,
-    permalinkSymbol: '#',
-    permalinkClass: 'heading-anchor',
-    permalinkBefore: true,
-    permalinkAttrs: () => ({ 'aria-hidden': true }),
+    permalink: markdownItAnchor.permalink.ariaHidden({
+        symbol: '#',
+        class: 'heading-anchor',
+        placement: 'before'
+    }),
+    tabIndex: false,
     level: 2,
     slugify: anchorSlugify
 }).use(markdownItFootnotes).disable('code')

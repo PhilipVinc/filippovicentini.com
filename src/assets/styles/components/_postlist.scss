@@ -1,10 +1,12 @@
+@use "../utils/mixins";
+
 .postlist {
-    @include container-narrow;
+    @include mixins.container-narrow;
 
     &__item {
         margin-bottom: 3rem;
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             margin-bottom: 5rem;
         }
     }
@@ -34,7 +36,7 @@
         color: var(--color-secondary);
     }
     &__excerpt {
-        @include body-text();
+        @include mixins.body-text();
 
         .postlist__item--draft & {
             opacity: 0.5;

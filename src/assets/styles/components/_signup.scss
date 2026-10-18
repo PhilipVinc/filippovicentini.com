@@ -1,3 +1,7 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+@use "alert";
+
 .signup {
     position: relative;
     max-width: 700px;
@@ -7,7 +11,7 @@
         display: none;
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         font-size: 1.125rem;
     }
 
@@ -25,15 +29,15 @@
     }
 
     &__back {
-        @include coverall;
+        @include mixins.coverall;
         visibility: hidden;
         z-index: 0;
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             padding-right: calc(40% + 2rem);
 
             &::after {
-                @include coverall;
+                @include mixins.coverall;
                 content: '';
                 display: block;
                 border-radius: 0 0.5rem 0.5rem 0;
@@ -62,10 +66,10 @@
         left: -1.5rem;
         font-size: 2rem;
         z-index: 2;
-        color: $state-success;
+        color: alert.$state-success;
         opacity: 0;
         transform: scale(0);
-        transition: all 0.2s $animation-curve-default;
+        transition: all 0.2s variables.$animation-curve-default;
     }
 }
 
@@ -89,9 +93,9 @@
         transform: scale(1);
     }
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         .signup__back::after {
-            @include invert-on-dark();
+            @include mixins.invert-on-dark();
             background: #fff url('/assets/images/confetti.gif') no-repeat 0 0;
         }
     }

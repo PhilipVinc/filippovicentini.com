@@ -1,14 +1,16 @@
+@use "../utils/mixins";
+
 .sr-only {
-    @include sr-only();
+    @include mixins.sr-only();
 }
 
 .sr-only-focusable {
-    @include sr-only-focusable();
+    @include mixins.sr-only-focusable();
 }
 
 .sr-skip-link {
-    @include sr-only();
-    @include sr-only-focusable();
+    @include mixins.sr-only();
+    @include mixins.sr-only-focusable();
 
     &:focus {
         position: absolute;
@@ -58,7 +60,7 @@
 
 .u-desktop-only {
     display: none;
-    @include mq(xl) {
+    @include mixins.mq(xl) {
         display: block;
     }
 }

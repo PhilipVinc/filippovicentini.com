@@ -1,5 +1,8 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
 .markdown {
-    @include body-text();
+    @include mixins.body-text();
 
     /* Vertical Rythm */
     > * {
@@ -7,7 +10,7 @@
     }
 
     a {
-        @include hyphenate;
+        @include mixins.hyphenate;
     }
 
     /* In-Text Links */
@@ -18,7 +21,7 @@
             box-shadow: inset 0 -2px 0 0 currentColor;
             border-bottom: 1px solid currentColor;
 
-            @include hover-focus {
+            @include mixins.hover-focus {
                 color: #fff;
                 box-shadow: inset 0 -1.25em 0 0 var(--color-primary);
                 border-bottom-color: var(--color-primary);
@@ -82,7 +85,7 @@
         &:first-child {
             margin-top: 0;
         }
-        @include hover-focus {
+        @include mixins.hover-focus {
             > .heading-anchor {
                 opacity: 0.75;
             }
@@ -97,11 +100,11 @@
         width: 1em;
         opacity: 0;
 
-        @include hover-focus {
+        @include mixins.hover-focus {
             opacity: 1 !important;
         }
 
-        @include mq(md) {
+        @include mixins.mq(md) {
             display: block;
         }
     }
@@ -148,18 +151,18 @@
         }
 
         > code {
-            @include container-narrow;
+            @include mixins.container-narrow;
             display: block;
         }
 
-        @include mq(lg) {
+        @include mixins.mq(lg) {
             padding: 2rem 3rem;
         }
         @media screen and (min-width: 1040px) {
             .post & {
                 margin-left: -180px;
                 margin-right: -180px;
-                border-radius: $border-radius * 2;
+                border-radius: variables.$border-radius * 2;
             }
         }
     }
@@ -167,10 +170,10 @@
     /* Inline code */
     :not(pre) > code {
         display: inline-block;
-        font-family: $font-family-monospace;
+        font-family: variables.$font-family-monospace;
         background-color: var(--color-bg-offset);
         border: 1px solid var(--color-border);
-        border-radius: $border-radius;
+        border-radius: variables.$border-radius;
         padding: 2px 4px;
         margin: 0 2px;
         font-size: 75%;
@@ -206,12 +209,12 @@
         }
 
         a {
-            color: $twitter-brand-primary;
+            color: variables.$twitter-brand-primary;
             box-shadow: none;
             border: none;
 
-            @include hover-focus {
-                color: $twitter-brand-primary;
+            @include mixins.hover-focus {
+                color: variables.$twitter-brand-primary;
                 text-decoration: underline;
                 box-shadow: none;
             }
@@ -233,7 +236,7 @@
 
         video,
         iframe {
-            @include coverall;
+            @include mixins.coverall;
             width: 100% !important;
             height: 100%;
             z-index: 2;
@@ -247,7 +250,7 @@
 
     /* Extends */
     .extend {
-        @include mq(lg) {
+        @include mixins.mq(lg) {
             margin-left: -3rem;
             margin-right: -3rem;
         }

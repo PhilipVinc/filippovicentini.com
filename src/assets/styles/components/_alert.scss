@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // Alert Component
 
 $state-success: #43a9a3;
@@ -17,13 +19,13 @@ $state-error: #d81e05;
 
     // Variations
     &--success {
-        color: darken($state-success, 10%);
-        border-color: lighten($state-success, 15%);
-        background-color: lighten($state-success, 50%);
+        color: color.adjust($state-success, $lightness: -10%, $space: hsl);
+        border-color: color.adjust($state-success, $lightness: 15%, $space: hsl);
+        background-color: color.adjust($state-success, $lightness: 50%, $space: hsl);
     }
     &--error {
-        color: darken($state-error, 10%);
-        border-color: lighten($state-error, 20%);
+        color: color.adjust($state-error, $lightness: -10%, $space: hsl);
+        border-color: color.adjust($state-error, $lightness: 20%, $space: hsl);
         background-color: rgba($state-error, 0.2);
     }
 }

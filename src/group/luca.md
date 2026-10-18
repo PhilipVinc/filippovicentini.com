@@ -1,7 +1,7 @@
 ---
 name: "Luca Gravina"
 position: Past Member
-joindate: 1-02-2024
+joindate: 2024-02-01
 image: luca.jpg
 imagecolor: "#252F3C"
 order: 3

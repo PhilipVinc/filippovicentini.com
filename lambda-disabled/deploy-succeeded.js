@@ -1,3 +1,8 @@
+// DISABLED: this Netlify "deploy-succeeded" hook tweeted the latest note after each deploy.
+// It was moved out of `lambda/` so Netlify no longer deploys it. To re-enable, move it back
+// into `lambda/` and `npm install twitter`. Note that it targets the Twitter v1.1 API,
+// which no longer works, so it needs porting before it can be used again.
+
 import fetch from 'node-fetch'
 import dotenv from 'dotenv'
 import Twitter from 'twitter'

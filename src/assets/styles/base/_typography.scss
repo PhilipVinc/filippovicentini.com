@@ -1,3 +1,5 @@
+@use "../utils/mixins";
+
 h1,
 h2,
 h3,
@@ -40,7 +42,7 @@ p {
     font-weight: 300;
     line-height: 1.4;
 
-    @include mq(md) {
+    @include mixins.mq(md) {
         font-size: 2rem;
     }
 }
@@ -57,7 +59,7 @@ a {
     color: var(--color-primary);
     text-decoration: none;
 
-    @include hover-focus {
+    @include mixins.hover-focus {
         color: var(--color-primary-offset);
     }
 }

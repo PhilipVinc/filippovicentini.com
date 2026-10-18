@@ -1,7 +1,7 @@
 ---
 name: "Antoine Misery"
 position: PhD Student
-joindate: 1-10-2024
+joindate: 2024-10-01
 image: misery.png
 imagecolor: "#252F3C"
 order: 4

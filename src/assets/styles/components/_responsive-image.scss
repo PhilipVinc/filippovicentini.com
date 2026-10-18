@@ -1,5 +1,7 @@
+@use "../utils/mixins";
+
 .responsive-image {
-    @include coverall;
+    @include mixins.coverall;
     display: block;
     width: 100%;
     height: 100%;

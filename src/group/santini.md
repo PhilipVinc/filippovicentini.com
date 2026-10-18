@@ -1,7 +1,7 @@
 ---
 name: "Alessandro Santini"
 position: Postdoctoral Researcher
-joindate: 1-11-2024
+joindate: 2024-11-01
 image: santini.jpeg
 imagecolor: "#252F3C"
 order: 2
