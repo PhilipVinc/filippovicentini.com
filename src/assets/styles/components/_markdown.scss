@@ -243,11 +243,6 @@
         }
     }
 
-    /* Signup Form */
-    .signup {
-        box-shadow: 14px 14px 30px -10px rgba(0, 0, 0, 0.1);
-    }
-
     /* Extends */
     .extend {
         @include mixins.mq(lg) {

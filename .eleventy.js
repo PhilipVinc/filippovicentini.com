@@ -59,7 +59,6 @@ module.exports = function (config) {
 
     // Shortcodes
     config.addShortcode('icon', shortcodes.icon)
-    config.addPairedShortcode('signup', shortcodes.signup)
     config.addPairedShortcode('callout', shortcodes.callout)
     config.addPairedShortcode("markdown", (content, inline = null) => {
       return inline

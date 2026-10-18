@@ -2,7 +2,6 @@ import 'focus-visible'
 import 'eleventy-plugin-share-highlight/share-highlight'
 
 import './modules/navigation'
-import './modules/signup'
 import './modules/lazyload'
 import './modules/themepicker'
 import './modules/infinitescroll'

@@ -59,21 +59,3 @@
         color: var(--color-text-offset);
     }
 }
-
-.form--signup {
-    .form__actions {
-        text-align: left;
-        display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
-    @include mixins.mq(md) {
-        .form__feedback {
-            margin-top: 0;
-            flex: 1 0 0%;
-        }
-        .btn--primary {
-            margin-right: 2rem;
-        }
-    }
-}
